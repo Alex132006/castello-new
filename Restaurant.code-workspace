@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Restaurant"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			
+			{
+				"command": "npm start",
+				"name": "Run npm start",
+				"request": "launch",
+				"type": "node-terminal"
+			},
+			
+			{
+				"type": "node",
+				"name": "Run Current File",
+				"request": "launch",
+				"program": "c:\\Users\\esson\\OneDrive\\Documents\\Restaurant\\restau.html"
+			}
+		]
+	}
+}
