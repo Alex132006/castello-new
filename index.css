@@ -199,7 +199,7 @@
 
         /* Conteneur Carrousel */
         .carousel-container {
-            width: 300%;
+            width: 100%;
             overflow: hidden;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
