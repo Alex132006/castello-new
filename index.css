@@ -174,8 +174,6 @@
             justify-content: center;
             position: relative;
             top: -5px;
-            animation-duration: 2s;
-            animation: rotate 2s infinite;
         }
         /*fin de pub*/
 
@@ -992,4 +990,5 @@
         .cookie-buttons {
             justify-content: center;
         }
+
     }
