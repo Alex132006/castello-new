@@ -23,7 +23,7 @@
             position: fixed;
             top: 20px;
             right: 10px;
-            width: 70px;
+            width: 80px;
             height: auto;
             z-index: 999;
             border-radius: 50%;
@@ -105,7 +105,6 @@
 
         /*Gestion l'horloge */
         .clock {
-            position: relative;
             justify-items: center;
             font-size: 16px;
             color: #ffffffd7;
@@ -125,10 +124,10 @@
             transition: background-color 0.3s;
             margin-left: 20px;
             position: fixed;
-            top: 80px;
-            left: 0px;
+            top: 70px;
+            left: 40px;
             z-index: 999;
-            box-shadow: 0 0 10px #d1b72475;
+            box-shadow: 0 10px 10px #00000075;
         }
 
         .events-menu-a:hover {
@@ -150,7 +149,7 @@
             top: 120px;
             left: 0px;
             z-index: 999;
-            box-shadow: 0 0 10px #d1b72475;
+            box-shadow: 0 10px 10px #00000075;
         }
 
         .events-menu-b:hover {
@@ -175,6 +174,8 @@
             justify-content: center;
             position: relative;
             top: -5px;
+            animation-duration: 2s;
+            animation: rotate 2s infinite;
         }
         /*fin de pub*/
 
@@ -189,7 +190,8 @@
             box-shadow: 0 15px 35px rgba(255, 255, 255, 0.438);
             width: 35%;
             position: fixed;
-            right: 10px;
+            top: 210px;
+            right: 20px;
             padding: 5px;
             margin: 1px auto;
             justify-items: center;
@@ -209,13 +211,15 @@
         /* Piste du carrousel */
         .carousel-track {
             display: flex;
-            animation: defilement 20s linear infinite ;
+            animation: defilement 23s linear infinite ;
         }
+
+
 
         /* Slides individuelles */
         .carousel-slide {
             flex-shrink: 0;
-            min-width: 30px;
+            min-width: 200px;
             height: 150px;
             margin: 0 10px;
             display: flex;
@@ -231,10 +235,12 @@
         }
 
         .carousel-slide img {
-            width: 30%;
-            height: 10%;
+            width: 100%;
+            height: 100%;
+            border-radius: 40px;
             object-fit: cover;
             transition: transform 0.3s ease;
+            box-shadow: 0 2px 1px 1px #000;
         }
 
         .carousel-slide:hover img {
@@ -380,7 +386,7 @@
             border: 1px solid rgba(255, 255, 255, 0.747);
             border-radius: 50px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgb(0, 0, 0);
+            box-shadow: 0 5px 2px 2px rgb(0, 0, 0);
             transition: transform 0.3s;
             position: relative;
         }
@@ -423,7 +429,10 @@
         .item-title {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            position: relative;
+            top: -20px;
+            left: -10px;
+            margin-bottom: 15px;
             font-size: 20px;
         }
 
@@ -431,6 +440,9 @@
         .item-price {
             color: #d4af37;
             font-weight: bold;
+            position: relative;
+            top: 30px;
+            left: -150px;
         }
 
         /* pour les anciens prix barrés  dans la promotion */
@@ -791,7 +803,7 @@
 
         /*fin de la promotion */
 
-        /* ecris la responsive des grands ecrans*/
+        /*la responsive des grands ecrans*/
         @keyframes rotate {
 
             0%,
@@ -989,7 +1001,4 @@
         .cookie-buttons {
             justify-content: center;
         }
-
     }
-
-
