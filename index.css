@@ -36,6 +36,7 @@
         header {
             background-color: #00000000;
             color: #ffffff;
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             position: fixed;
             top: 0;
@@ -105,7 +106,7 @@
 
         /*Gestion l'horloge */
         .clock {
-            justify-items: center;
+            justify-items: centr;
             font-size: 16px;
             color: #ffffffd7;
             text-shadow: 0 0 5px #0000007e, 0 0 10px #000000a8;
@@ -124,8 +125,8 @@
             transition: background-color 0.3s;
             margin-left: 20px;
             position: fixed;
-            top: 70px;
-            left: 40px;
+            top: 85px;
+            left: 120px;
             z-index: 999;
             box-shadow: 0 10px 10px #00000075;
         }
@@ -184,6 +185,7 @@
             font-size: 15px;
             background-color: hsla(46, 59%, 30%, 0.503);
             color: #ffffff;
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.716);
             border-radius: 50px;
@@ -338,6 +340,7 @@
             padding: 0 20px;
             background-color: #ffffff1a;
             background: rgba(51, 50, 50, 0.13);
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.716);
             border-radius: 50px;
@@ -357,6 +360,7 @@
             font-size: 25px;
             background-color: hsla(0, 0%, 57%, 0.11);
             color: #ffffff;
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.716);
             border-radius: 50px;
@@ -382,6 +386,7 @@
         .menu-item {
             background-color: #4e4e4e00;
             color: #ffffff;
+            -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.747);
             border-radius: 50px;
@@ -467,6 +472,10 @@
             margin-top: 40px;
         }
 
+        #gallery {
+            background-color: #654f2d6a;
+        }
+
         .gallery-item {
             height: 250px;
             overflow: hidden;
@@ -526,6 +535,10 @@
             font-weight: bold;
             margin-bottom: 15px;
             color: #ffffff;
+        }
+
+        .police {
+            font-family: 'Courier New', Courier, monospace;
         }
 
         .footer-column ul {
@@ -690,6 +703,7 @@
 
         .modal-content {
             background: rgba(0, 0, 0, 0.226);
+            -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(197, 171, 38, 0.524);
             border-radius: 30px;
@@ -699,6 +713,11 @@
             width: 70%;
             max-width: 600px;
             position: relative;
+        }
+
+        #foodDescription {
+            font-size: 16px;
+            color: #e7e1e1;
         }
 
         .close-btn {
@@ -924,6 +943,7 @@
         left: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.305);
+        -webkit-backdrop-filter: blur(13px);
         backdrop-filter: blur(13px);
         border-top: 2px solid #d4af37;
         box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.733);
