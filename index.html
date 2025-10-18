@@ -26,8 +26,8 @@
             </div>
             <nav>
                 <button class="events-menu-a" id="eventsBtn">События</button>
-                <select class="events-menu-b" id="choix" name="section">
-                    <option class="events-menu">Выберите раздел :</option>
+                <select class="events-menu-b" id="choix" name="section" aria-label="Выберите раздел меню">
+                    <option value="">Выберите раздел :</option>
                     <option value="#dejeuner">Завтраки</option>
                     <option value="#bisness">Б-Ланч</option>
                     <option value="#combo">Комбо</option>
@@ -1781,7 +1781,7 @@
         <!-- Fin de promo -->
 
         <!-- les images de la gallerie -->
-        <section id="gallery" style="background-color: #654f2d6a;">
+        <section id="gallery">
                 <h3 class="category-title">Галерея</h3>
                 <div class="gallery">
                     <div class="gallery-item">
@@ -1809,7 +1809,6 @@
                             alt="Кофе и выпечка">
                     </div>
                 </div>
-            </div>
         </section>
         <!-- fin de la gallerie -->
 
@@ -1900,7 +1899,7 @@
         <div id="foodModal" class="modal">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
-                <p id="foodDescription" style="font-size: 16px; color: #e7e1e1;"></p>
+                <p id="foodDescription"></p>
             </div>
         </div>
 
