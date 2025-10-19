@@ -385,7 +385,7 @@
         /*le container des noms d'articles*/
         .menu-item {
             background-color: #4e4e4e00;
-            color: #cb1d1daf;
+            color: #fdfdfdaf;
             -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 225, 0, 0.435);
