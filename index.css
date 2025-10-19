@@ -125,8 +125,8 @@
             transition: background-color 0.3s;
             margin-left: 20px;
             position: fixed;
-            top: 70px;
-            left: 40px;
+            top: 120px;
+            left: 1000px;
             z-index: 999;
             box-shadow: 0 10px 10px #00000075;
         }
