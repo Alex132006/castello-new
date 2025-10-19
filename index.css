@@ -126,7 +126,7 @@
             margin-left: 20px;
             position: fixed;
             top: 120px;
-            left: 170px;
+            left: 100px;
             z-index: 999;
             box-shadow: 0 10px 10px #00000075;
         }
@@ -192,7 +192,7 @@
             box-shadow: 0 15px 35px rgba(255, 255, 255, 0.438);
             width: 35%;
             position: fixed;
-            top: 5px;
+            top: 10px;
             right: 20px;
             padding: 5px;
             margin: 1px auto;
@@ -358,7 +358,7 @@
         /*le container des noms des articles*/
         .category-title {
             font-size: 25px;
-            background-color: hsla(0, 0%, 57%, 0.11);
+            background-color: hsla(0, 0%, 57%, 0.11);   
             color: #ffffff;
             -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
@@ -385,10 +385,10 @@
         /*le container des noms d'articles*/
         .menu-item {
             background-color: #4e4e4e00;
-            color: #ffffff;
+            color: #cb1d1daf;
             -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.747);
+            border: 1px solid rgba(255, 225, 0, 0.435);
             border-radius: 50px;
             overflow: hidden;
             box-shadow: 0 5px 2px 2px rgb(0, 0, 0);
@@ -401,8 +401,8 @@
             position: absolute;
             top: 15px;
             right: 15px;
-            background-color: #e74c3c;
-            color: white;
+            background-color: hsla(6, 78%, 57%, 0);
+            color: white;   
             padding: 5px 10px;
             border-radius: 4px;
             font-weight: bold;
@@ -446,7 +446,7 @@
             color: #d4af37;
             font-weight: bold;
             position: relative;
-            top: 10px;
+            top: 40px;
             right: auto;
         }
 
