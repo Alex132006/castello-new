@@ -4,15 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ресторан & Кафе Кастелло</title>
+    <title>Кафе Кастелло Пан Африка</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
+    <script>
+        // Loading screen with restaurant name
+        window.addEventListener('load', function() {
+            const loadingScreen = document.createElement('div');
+            loadingScreen.id = 'loading-screen';
+            loadingScreen.innerHTML = `
+                <div class="loading-content">
+                    <h2>добро пожаловать</h2> 
+                    <h3>В</h3>
+                    <h1>Кастелло Пан Африка</h1>
+                    <div class="spinner"></div>
+                    <p>Загрузка...</p>
+                </div>
+            `;
+            loadingScreen.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #442d0a 0%, #d4af37 100%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                color: white;
+                font-family: 'Playfair Display', Georgia, serif;
+                text-align: center;
+            `;
+            document.body.appendChild(loadingScreen);
+
+            // Hide loading screen after 3 seconds
+            setTimeout(function() {
+                loadingScreen.style.opacity = '0';
+                setTimeout(function() {
+                    loadingScreen.remove();
+                }, 500);
+            }, 3000);
+        });
+    </script>
 </head>
 
 <body class="body">
     <header>
         <div class="nom-resto">
-            <p>Кастелло Пан Африка</p>
+            <p>Кафе Кастелло Пан Африка</p>
         </div>
         <div>
             <div class="header-container">
