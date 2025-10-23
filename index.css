@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Playfair Display", Georgia, serif;
 }
 
 /* Variables CSS pour la cohérence */
@@ -264,6 +263,8 @@ nav ul li a:hover {
 
 /* Styles pour les boutons quantité et ajouter au panier */
 .quantity-controls {
+  position: relative;
+  left: -19px; 
   display: flex;
   align-items: center;
   gap: 8px;
@@ -319,26 +320,27 @@ nav ul li a:hover {
   background: linear-gradient(
     135deg,
     hsla(120, 59%, 40%, 0.7),
-    hsla(120, 59%, 30%, 0.7)
-  );
+    hsla(120, 59%, 30%, 0.7));
   color: var(--text-light);
   border: 1px solid rgba(212, 175, 55, 0.5);
   padding: 8px 16px;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+  position: absolute;
+  right: 9px;
   transition: var(--transition);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  font-size: 14px;
+  font-size: 10px;
 }
 
 .add-to-cart-btn:hover {
   background: linear-gradient(
     135deg,
-    hsla(120, 59%, 45%, 0.8),
-    hsla(120, 59%, 35%, 0.8)
+    hsl(60, 59%, 45%),
+    hsla(120, 59%, 35%, 0.459)
   );
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -640,7 +642,7 @@ section {
 
 /* Effet au survol amélioré */
 .menu-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(1px);
   box-shadow: 0 8px 25px 4px rgba(0, 0, 0, 0.4);
   background-color: rgba(78, 78, 78, 0.1);
 }
@@ -683,18 +685,24 @@ section {
 
 /*Gestion de l'emplacement des prix*/
 .item-title {
+  position: relative;
+  top: -10px;
+  left: -20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0px;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 /* Couleur des montats */
 .item-price {
+  position: relative;
+  top: 5px;
+  left: 10px;
   color: var(--primary-gold);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* pour les anciens prix barrés  dans la promotion */
