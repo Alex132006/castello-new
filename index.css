@@ -1,4 +1,4 @@
-* {
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -692,7 +692,7 @@ section {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0px;
-  font-size: 20px;
+  font-size: 13px;
 }
 
 /* Couleur des montats */
@@ -702,7 +702,7 @@ section {
   left: 10px;
   color: var(--primary-gold);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* pour les anciens prix barrés  dans la promotion */
@@ -898,6 +898,8 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
@@ -969,7 +971,7 @@ footer {
 
 .floating-cart.collapsed {
   width: 70px;
-  height: 70px;
+  height: 100px;
 }
 
 .floating-cart.expanded {
@@ -979,10 +981,12 @@ footer {
 }
 
 .cart-toggle {
-  width: 70px;
-  height: 70px;
-  background: var(--bg-dark);
-  border: 2px solid rgba(212, 175, 55, 0.5);
+  width: 60px;
+  height: 60px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background: #d4c73700;
+  border: 1px solid  rgba(246, 189, 2, 0.418);
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -990,23 +994,23 @@ footer {
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgb(80, 73, 73);
 }
 
 .cart-toggle:hover {
   transform: scale(1.1);
-  border-color: var(--primary-gold);
+  border-color: var(--text-light);
 }
 
 .cart-toggle i {
-  color: var(--primary-gold);
+  color: #ffc400bf;
   font-size: 24px;
   margin-bottom: 2px;
 }
 
 .cart-toggle #cart-count {
-  background: var(--primary-gold);
-  color: var(--text-dark);
+  background: #ffc400bf;
+  color: #ffffff;
   border-radius: 50%;
   width: 22px;
   height: 22px;
@@ -1016,18 +1020,24 @@ footer {
   font-size: 12px;
   font-weight: bold;
   position: absolute;
-  top: -5px;
+  top: -10px;
   right: -5px;
 }
 
 .cart-content {
   display: none;
-  background: var(--bg-dark);
-  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: rgba(2, 2, 2, 0.315);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(246, 189, 2, 0.418);
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   margin-top: 10px;
   overflow: hidden;
+}
+
+#favorites-content {
+  display: none;
 }
 
 .floating-cart.expanded .cart-content {
@@ -1039,7 +1049,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.705);
 }
 
 .cart-tabs {
@@ -1048,7 +1058,7 @@ footer {
 }
 
 .tab {
-  color: #888;
+  color: #ffffff;
   cursor: pointer;
   padding: 5px 10px;
   border-radius: 5px;
@@ -1058,7 +1068,7 @@ footer {
 
 .tab.active {
   color: var(--primary-gold);
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(255, 255, 255, 0.295);
 }
 
 .tab:hover {
@@ -1082,7 +1092,7 @@ footer {
 }
 
 .cart-close:hover {
-  background-color: rgba(212, 175, 55, 0.2);
+  background-color: rgba(212, 199, 55, 0.13);
 }
 
 .cart-items {
@@ -1114,8 +1124,8 @@ footer {
 .remove-item {
   background: none;
   border: none;
-  color: #ff6b6b;
-  font-size: 18px;
+  color: #ff5858c7;
+  font-size: 30px;
   cursor: pointer;
   padding: 0;
   width: 20px;
@@ -1128,7 +1138,7 @@ footer {
 }
 
 .remove-item:hover {
-  background-color: rgba(255, 107, 107, 0.2);
+  background-color: rgba(255, 107, 107, 0.199);
 }
 
 .cart-total {
@@ -1190,8 +1200,8 @@ footer {
   height: 150px;
   border-radius: 50%;
   margin-bottom: 2rem;
-  border: 3px solid var(--text-light);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  border: 1px solid #b8952c;
+  box-shadow: 0 0 20px rgba(182, 159, 32, 0.3);
   animation: logoPulse 2s ease-in-out infinite;
   will-change: transform; /* Optimisation performance */
 }
@@ -1229,6 +1239,13 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Empty message styling */
+.empty-message {
+  text-align: center;
+  color: #888;
+  padding: 20px;
 }
 
 /* Cookie Consent Banner */
@@ -1465,8 +1482,6 @@ footer {
   }
 
   /* Réduire les effets de flou sur mobile pour les performances */
-  .modal-content {
-  }
 }
 
 /* Très petits mobiles */
