@@ -625,11 +625,11 @@ section {
 /*le container des noms des articles*/
 .category-title {
   font-size: 25px;
-  background-color: hsla(0, 0%, 57%, 0.062);
+  background-color: hsla(0, 0%, 57%, 0);
   color: var(--text-light);
   border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 50px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.277);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
   width: auto;
   padding: 10px;
   margin: 20px auto;
