@@ -35,7 +35,7 @@
                 setTimeout(function () {
                     loadingScreen.remove();
                 }, 500);
-            }, 2000);
+            }, 1000);
         });
 
 
