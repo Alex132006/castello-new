@@ -87,7 +87,7 @@
 
                 setTimeout(() => {
                     this.innerHTML = originalHTML;
-                    this.style.background = 'linear-gradient(135deg, hsla(62, 59%, 40%, 0.70), hsla(120, 59%, 30%, 0.7))';
+                    this.style.background = 'linear-gradient(135deg, hsla(62, 59%, 40%, 0.70), hsla(61, 62%, 62%, 0.70))';
                 }, 1500);
             });
         });

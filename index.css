@@ -30,6 +30,7 @@ a:focus {
 body {
   background-color: #442d0a80;
   color: var(--text-dark);
+  /* background: url(); */
   /* background: url('image restaurant\фон.jpg') no-repeat center center fixed; */
   background-size: cover;
   min-height: 100vh;
@@ -471,7 +472,7 @@ option {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-300px * 6 - 20px * 6));
+    transform: translateX(calc(-270px * 9 - 20px * 6));
   }
 }
 
@@ -481,6 +482,23 @@ option {
   background: #ff0000;
   color: #eee;
   transform: rotate(-20deg);
+  border: 1px solid #d1b724;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.new- {
+  width: 70px;
+  height: 30px;
+  background: #3b824584;
+  color: #eee;
+  transform: rotate(0deg);
   border: 1px solid #d1b724;
   border-radius: 20px;
   display: flex;
