@@ -81,13 +81,13 @@
                 addToCart(name, price, quantity);
 
                 // Animation de confirmation
-                const originalText = this.textContent;
-                this.textContent = '✓ Добавлено!';
+                const originalHTML = this.innerHTML;
+                this.innerHTML = '✓ ';
                 this.style.background = 'linear-gradient(135deg, hsla(120, 59%, 50%, 0.8), hsla(120, 59%, 40%, 0.8))';
 
                 setTimeout(() => {
-                    this.textContent = originalText;
-                    this.style.background = 'linear-gradient(135deg, hsla(120, 59%, 40%, 0.7), hsla(120, 59%, 30%, 0.7))';
+                    this.innerHTML = originalHTML;
+                    this.style.background = 'linear-gradient(135deg, hsla(62, 59%, 40%, 0.70), hsla(120, 59%, 30%, 0.7))';
                 }, 1500);
             });
         });
