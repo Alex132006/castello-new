@@ -469,10 +469,10 @@ option {
 /* Animation de défilement */
 @keyframes defilement {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(calc(-270px * 9 - 20px * 6));
+    transform: translateX(calc(-270px * 9 - 20px * 9));
   }
 }
 
@@ -480,9 +480,10 @@ option {
   width: 70px;
   height: 30px;
   background: #ff0000;
-  color: #eee;
+  color: #ffffff;
   transform: rotate(-20deg);
-  border: 1px solid #d1b724;
+  border: 1px solid #ffffff;
+  box-shadow: 0 10px #000;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -497,9 +498,9 @@ option {
   width: 70px;
   height: 30px;
   background: #3b824584;
-  color: #eee;
+  color: #ffffff;
   transform: rotate(0deg);
-  border: 1px solid #d1b724;
+  border: 1px solid #ffffff;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -507,7 +508,7 @@ option {
   position: absolute;
   top: 1px;
   right: 10px;
-  z-index: 00;
+  z-index: 1000;
 }
 
 .btn {

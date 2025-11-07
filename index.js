@@ -34,8 +34,8 @@
                 loadingScreen.style.opacity = '0';
                 setTimeout(function () {
                     loadingScreen.remove();
-                }, 500);
-            }, 1000);
+                }, 50);
+            }, 900);
         });
 
 
