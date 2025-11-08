@@ -11,21 +11,15 @@
     </style>
 </head>
 
-<body class="body">
-    <header>
-        <div class="nom-resto">
-            <p>Кастелло Пан Африка</p>
-        </div>
-        <div>
-            <div class="header-container">
-                <img src="image copy.png" class="logo-castello" alt="">
-            </div>
-            <div class="clock">
-                <p><i class="fas fa-clock"></i> Пc-Вс:<br> 12:00 - 01:00</p>
-            </div>
-            <div class="je vien finir">
+<body>
+    <div class="container-haut">
+            <h2 class="nom-castello">Кастелло Пан Африка</h2>
+            <img src="image copy.png" class="logo-castello" alt="">
+            <p class="heure"> Пc-Вс:<br> 12:00 - 01:00</p>
             <nav>
-                <select class="events-menu-b" id="choix" name="section" aria-label="Выберите раздел меню">
+                <p class="signal">1</p>
+                <button class="events-menu" id="eventsBtn">События</button>
+                <select class="events-menu" id="choix" name="section" aria-label="Выберите раздел меню">
                     <option value="#" class="compteur">Категория:</option>
                     <option value="#sold" class="compteur">Выгодно</option>
                     <option value="#dejeuner" class="compteur">Завтраки</option>
@@ -48,14 +42,8 @@
                     <option value="#gallery" class="compteur">Галерея</option>
                     <option value="#apropos" class="compteur">О нас</option>
                 </select>
-                <div class="signal">
-                    <p class="signals">1</p>
-                <button class="events-menu-a" id="eventsBtn">События</button>
-                </div>
             </nav>
-            </div>
-        </div>
-    </header>
+    </div>
 
     <section class="pub-carousel-section">
         <h2>🔥 Новые</h2>
