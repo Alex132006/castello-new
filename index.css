@@ -87,7 +87,7 @@ body {
   align-items: center;
 }
 
-.events-menu-b {
+.events-menu {
   position: fixed;
   top: 95px;
   right: 40px;
@@ -104,7 +104,7 @@ body {
   border: 1px solid rgb(142, 109, 2);
   border-radius: 15px;
 }
-.events-menu-b:hover {
+.events-menu:hover {
   border: 1px solid rgb(253, 253, 253);
   width: 135px;
   height: 33px;
