@@ -816,14 +816,6 @@ section {
   margin-top: -10px;
 }
 
-/* la galerie d'images de la promotion */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-  margin-top: 5px;
-}
-
 .gallery-item {
   height: 350px;
   overflow: hidden;
