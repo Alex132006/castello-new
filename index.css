@@ -87,15 +87,37 @@ body {
   align-items: center;
 }
 
-.events-menu {
-  position: relative;
-  top: -110px;
-  left: 380px;
+.events-menu-b {
+  position: fixed;
+  top: 95px;
+  right: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  margin: 10px;
+  align-items: center;
+  width: 98px;
+  height: 30px;
+  text-align: center;
+  color: #ffffff;
+  background: rgb(142, 109, 2);
+  border: 1px solid rgb(142, 109, 2);
+  border-radius: 15px;
+}
+.events-menu-b:hover {
+  border: 1px solid rgb(253, 253, 253);
+  width: 135px;
+  height: 33px;
+}
+
+.events-menu-a {
+  position: fixed;
+  top: 58px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
   align-items: center;
   width: 95px;
   height: 30px;
@@ -105,16 +127,16 @@ body {
   border: 1px solid rgb(142, 109, 2);
   border-radius: 15px;
 }
-.events-menu:hover {
+.events-menu-a:hover {
   border: 1px solid rgb(253, 253, 253);
-  width: 98px;
-  height: 33px;
+  width: 94px;
+  height: 31px;
 }
 
 .signal {
-  position: fixed;
-  top: 47px;
-  left: 385px;
+  position: absolute;
+  top: 47px; 
+  right: 110px;
   width: 17px;
   height: 17px;
   background: red;
@@ -659,7 +681,34 @@ section {
 @media (max-width: 480px) {
     .menu-items {
         grid-template-columns: repeat(2, 1fr);
+    }
 
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 300px;
+    }
+
+    .footer-column {
+      flex: 1 1 100%;
+      margin-bottom: 15px;
+    }
+
+    .footer-top {
+      flex-direction: column;
+    }
+
+    .stats-section {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .stat-item {
+      min-width: auto;
+      text-align: center;
     }
   }
 /*le container des noms d'articles*/
@@ -1446,10 +1495,46 @@ footer {
     padding-top: 160px;
   }
 
+  .container-haut {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nom-castello {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .logo-castello {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .heure {
+    font-size: 14px;
+    top: 0;
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .events-menu-b {
+    width: 100%;
+    margin-top: 10px;
+  }
+
   .header-buttons {
     flex-direction: row;
     gap: 8px;
     width: auto;
+    justify-content: center;
   }
 
   .events-menu-a,
@@ -1548,6 +1633,33 @@ footer {
 
 /* Très petits mobiles */
 @media (max-width: 480px) {
+  .container-haut {
+    padding: 8px;
+  }
+
+  .nom-castello {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .logo-castello {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 8px;
+  }
+
+  .heure {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .events-menu-b {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 11px;
+    margin-top: 8px;
+  }
+
   .header-buttons {
     gap: 5px;
   }
@@ -1587,6 +1699,33 @@ footer {
   .menu-items {
     grid-template-columns: 1fr;
   }
+
+  .menu-item {
+    padding: 10px;
+  }
+
+  .menu-item img {
+    height: 120px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 200px;
+    height: 140px;
+  }
+
+  .pub-carousel-section h2 {
+    font-size: 18px;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .event-img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* Pour les très grands écrans (au-dessus de 1440px) */
@@ -1599,6 +1738,38 @@ footer {
   .menu-item {
     padding: 20px;
   }
+
+  .container-haut {
+    height: 250px;
+    padding: 20px;
+  }
+
+  .nom-castello {
+    font-size: 32px;
+  }
+
+  .logo-castello {
+    width: 90px;
+    height: 90px;
+  }
+
+  .heure {
+    font-size: 18px;
+    top: -60px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 350px;
+    height: 220px;
+  }
+
+  .pub-carousel-section h2 {
+    font-size: 28px;
+  }
+
+  .floating-cart.expanded {
+    width: 400px;
+  }
 }
 
 /* Pour les écrans moyens (1024px - 1439px) */
@@ -1607,10 +1778,73 @@ footer {
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
   }
+
+  .container-haut {
+    height: 220px;
+    padding: 18px;
+  }
+
+  .nom-castello {
+    font-size: 30px;
+  }
+
+  .logo-castello {
+    width: 85px;
+    height: 85px;
+  }
+
+  .heure {
+    font-size: 17px;
+    top: -55px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 320px;
+    height: 210px;
+  }
+
+  .floating-cart.expanded {
+    width: 380px;
+  }
 }
 
 /* Responsive pour tablettes (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .container-haut {
+    height: auto;
+    padding: 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nom-castello {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+
+  .logo-castello {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+
+  .heure {
+    font-size: 16px;
+    top: 0;
+    position: static;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .events-menu-b {
+    width: 80%;
+    margin-top: 15px;
+  }
+
   .header-container {
     padding: 0 15px;
   }
@@ -1634,6 +1868,19 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
   }
+
+  .pub-carousel-section h2 {
+    font-size: 20px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 250px;
+    height: 180px;
+  }
+
+  .floating-cart.expanded {
+    width: 320px;
+  }
 }
 
 /* Responsive for floating cart */
@@ -1645,6 +1892,37 @@ footer {
 
   .floating-cart.expanded {
     width: 280px;
+    max-height: 60vh;
+  }
+
+  .cart-items {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-cart.expanded {
+    width: 260px;
+    max-height: 50vh;
+  }
+
+  .cart-items {
+    max-height: 200px;
+  }
+
+  .cart-toggle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cart-toggle i {
+    font-size: 20px;
+  }
+
+  #cart-count {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
   }
 }
 
@@ -1663,6 +1941,25 @@ footer {
   .cookie-buttons {
     justify-content: center;
   }
+
+  .cookie-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-banner {
+    padding: 15px;
+  }
+
+  .cookie-content p {
+    font-size: 13px;
+  }
+
+  .cookie-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
 }
 
 /* Responsive for loading screen */
@@ -1679,5 +1976,177 @@ footer {
   .spinner {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* Gallery responsiveness */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-item {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .gallery-item {
+    height: 300px;
+  }
+}
+
+/* Footer responsiveness */
+@media (max-width: 768px) {
+  .castello-footer {
+    padding: 30px 15px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .footer-column h3 {
+    font-size: 14px;
+  }
+
+  .footer-column ul li a {
+    font-size: 13px;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat-item {
+    min-width: auto;
+    padding: 10px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-links a {
+    margin-right: 15px;
+  }
+}
+
+/* Small tablets (600px - 767px) */
+@media (min-width: 600px) and (max-width: 767px) {
+  .container-haut {
+    height: auto;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nom-castello {
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+
+  .logo-castello {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 12px;
+  }
+
+  .heure {
+    font-size: 15px;
+    top: 0;
+    position: static;
+    margin-bottom: 12px;
+  }
+
+  nav {
+    width: 100%;
+    text-align: center;
+  }
+
+  .events-menu-b {
+    width: 90%;
+    margin-top: 12px;
+  }
+
+  .menu-items {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 280px;
+    height: 190px;
+  }
+
+  .floating-cart.expanded {
+    width: 300px;
+  }
+}
+
+/* Ultra-wide screens (above 1440px) */
+@media (min-width: 1441px) {
+  .container-haut {
+    height: 250px;
+    padding: 20px;
+  }
+
+  .nom-castello {
+    font-size: 32px;
+  }
+
+  .logo-castello {
+    width: 90px;
+    height: 90px;
+  }
+
+  .heure {
+    font-size: 18px;
+    top: -60px;
+  }
+
+  .menu-items {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+  }
+
+  .carousel-slide {
+    flex: 0 0 350px;
+    height: 220px;
+  }
+
+  .pub-carousel-section h2 {
+    font-size: 28px;
+  }
+
+  .floating-cart.expanded {
+    width: 400px;
   }
 }
