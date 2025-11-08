@@ -658,9 +658,7 @@ section {
 /*le container des noms des articles*/
 .category-title {
   font-size: 25px;
-  background-color: hsla(0, 0%, 57%, 0);
   color: var(--text-light);
-  border: 1px solid rgba(255, 255, 255, 0);
   border-radius: 50px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
   width: auto;
@@ -745,11 +743,6 @@ section {
   filter: brightness(1.1);
 }
 
-/*le nom des articles*/
-.name {
-  color: #e7e1e1;
-}
-
 /*Gestion des articles des grandeurs et ajustement des noms*/
 .item-content {
   padding: 20px;
@@ -757,24 +750,30 @@ section {
 
 /*Gestion de l'emplacement des prix*/
 .item-title {
-  position: relative;
-  top: -10px;
-  left: -20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0px;
-  font-size: 13px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 /* Couleur des montats */
 .item-price {
   position: relative;
-  top: 5px;
-  left: 10px;
-  color: var(--primary-gold);
+  top: -50px;
+  right: -117px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px;
+  width: 60px;
+  height: 20px;
+  background: #000000;
+  border: 1px solid #000000;
+  color: #ff0101;
+  box-shadow: 0 4px #d43737;
   font-weight: bold;
   font-size: 15px;
+  text-align: center;
 }
 
 .sold-message {
@@ -834,7 +833,6 @@ section {
 .gallery-item:hover img {
   transform: scale(1.1);
 }
-
 /* fin de promotion */
 
 /*footer du bas*/
