@@ -758,8 +758,8 @@ section {
 /* Couleur des montats */
 .item-price {
   position: relative;
-  top: -50px;
-  right: -117px;
+  top: -20px;
+  right: -50px;
   display: flex;
   justify-content: center;
   align-items: center;
