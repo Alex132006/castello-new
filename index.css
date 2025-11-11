@@ -57,7 +57,7 @@ body {
 /* Gestion du header */
 .nom-castello {
   color: var(--secondary-gold);
-  font-size: 35px;
+  font-size: 20px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -77,7 +77,7 @@ body {
 /*Gestion l'horloge */
 .heure {
   color: var(--text-light);
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -1660,7 +1660,7 @@ footer {
   }
 
   .nom-castello {
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 8px;
   }
 
@@ -1671,7 +1671,7 @@ footer {
   }
 
   .heure {
-    font-size: 20px;  
+    font-size: 18px;  
     margin-bottom: 8px;
   }
 
