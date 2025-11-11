@@ -302,7 +302,7 @@ document.getElementById('add-all-to-cart-btn').addEventListener('click', functio
     this.innerHTML = '<i class="fas fa-check"></i> Добавлено!';
     this.style.background = '#27ae60';
     setTimeout(() => {
-        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Добавить все в корзину';
+        this.innerHTML = '<i class="fas fa-shopping-cart"></i> все в корзину';
         this.style.background = '';
     }, 1500);
 });
