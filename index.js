@@ -61,8 +61,9 @@
                 const menuItem = this.closest('.menu-item');
                 const name = menuItem.querySelector('.item-title').textContent;
                 const price = menuItem.querySelector('.montant').textContent;
+                const image = menuItem.querySelector('img').src;
 
-                addToCart(name, price, 1);
+                addToCart(name, price, 1, image);
 
                 // Animation de confirmation
                 const originalHTML = this.innerHTML;
@@ -83,8 +84,9 @@
                 const name = slide.querySelector('h3').textContent;
                 const priceText = slide.querySelector('.price').textContent.trim();
                 const price = priceText.replace('₽', '') + '₽';
+                const image = slide.querySelector('img').src;
 
-                addToCart(name, price, 1);
+                addToCart(name, price, 1, image);
 
                 // Animation de confirmation
                 const originalText = this.textContent;
@@ -99,7 +101,7 @@
         });
 
         // Fonction pour ajouter au panier
-        function addToCart(name, price, quantity) {
+        function addToCart(name, price, quantity, image) {
             // Extraire le prix numérique
             const priceValue = parseInt(price.replace('₽', '').replace(/\s/g, ''));
 
@@ -113,6 +115,7 @@
                     name: name,
                     price: priceValue,
                     quantity: quantity,
+                    image: image,
                     id: Date.now() // ID unique
                 });
             }
@@ -210,12 +213,9 @@
             }
         });
 
-        // Les autres fonctions existantes (toggleCart, updateCartDisplay, etc.) restent les mêmes
-        // Toggle cart visibility
+        // Redirect to cart page instead of toggling floating cart
         function toggleCart() {
-            const cart = document.getElementById('floating-cart');
-            cart.classList.toggle('expanded');
-            cart.classList.toggle('collapsed');
+            window.location.href = 'pannier.html';
         }
 
         // Update cart display
