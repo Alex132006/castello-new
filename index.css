@@ -77,7 +77,7 @@ body {
 /*Gestion l'horloge */
 .heure {
   color: var(--text-light);
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -1671,7 +1671,7 @@ footer {
   }
 
   .heure {
-    font-size: 18px;  
+    font-size: 15px;  
     margin-bottom: 8px;
   }
 
