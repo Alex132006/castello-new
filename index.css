@@ -152,9 +152,9 @@ body {
 .New-title {
   font-size: ;   
 }
-h3 {
+.category-title p {
   font-family: cursive;
-  font-size: 13px;
+  font-size: 19px;
 }
 
 option {
