@@ -6,7 +6,7 @@
                 <div class="loading-content">
                     <img src="image copy.png" alt="Логотип Кафе Кастелло Пан Африка" class="loading-logo">
                     <h2>добро пожаловать</h2>
-                    <h3>В</h3>Console.log("");
+                    <h3>В</h3>
                     <h1>Кастелло Пан Африка</h1>
                     <div class="spinner"></div>
                     <p>Загрузка...</p>
@@ -34,7 +34,7 @@
                 loadingScreen.style.opacity = '0';
                 setTimeout(function () {
                     loadingScreen.remove();
-                }, 50);
+                }, 200);
             }, 900);
         });
 
