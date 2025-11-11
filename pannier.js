@@ -1,8 +1,8 @@
-// Cart and Favorites Management for Cart Page
+// Gestion du panier et des favoris pour la page panier
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-// Update cart counter in header (if exists)
+// Mettre à jour le compteur du panier dans l'en-tête (si existe)
 function updateCartCounter() {
     const cartCounter = document.getElementById('cart-count');
     if (cartCounter) {
@@ -12,7 +12,7 @@ function updateCartCounter() {
     }
 }
 
-// Update cart display
+// Mettre à jour l'affichage du panier
 function updateCartDisplay() {
     const cartItems = document.getElementById('cart-items');
     const cartTotalEl = document.getElementById('cart-total');
@@ -31,7 +31,7 @@ function updateCartDisplay() {
                 <h3>Корзина пуста</h3>
                 <p>Добавьте товары из меню</p>
                 <button class="back-to-menu-btn" onclick="window.location.href='index.html'">
-                    Перейти в меню
+                    Mеню
                 </button>
             </div>
         `;
@@ -63,7 +63,7 @@ function updateCartDisplay() {
         if (checkoutBtn) checkoutBtn.disabled = false;
     }
 
-    // Add event listeners to quantity buttons
+    // Ajouter des écouteurs d'événements aux boutons de quantité
     document.querySelectorAll('.quantity-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const index = parseInt(this.getAttribute('data-index'));
@@ -81,7 +81,7 @@ function updateCartDisplay() {
         });
     });
 
-    // Add event listeners to remove buttons
+    // Ajouter des écouteurs d'événements aux boutons de suppression
     document.querySelectorAll('.remove-item').forEach(btn => {
         btn.addEventListener('click', function () {
             const index = parseInt(this.getAttribute('data-index'));
@@ -93,7 +93,7 @@ function updateCartDisplay() {
     });
 }
 
-// Update favorites display
+// Mettre à jour l'affichage des favoris
 function updateFavoritesDisplay() {
     const favoritesItems = document.getElementById('favorites-items');
     const favoritesCountEl = document.getElementById('favorites-count');
@@ -108,7 +108,7 @@ function updateFavoritesDisplay() {
                 <h3>Избранное пусто</h3>
                 <p>Добавьте товары в избранное</p>
                 <button class="back-to-menu-btn" onclick="window.location.href='index.html'">
-                    Перейти в меню
+                    Mеню
                 </button>
             </div>
         `;
@@ -127,8 +127,8 @@ function updateFavoritesDisplay() {
                     <div class="cart-item-price">${item.price}₽</div>
                 </div>
                 <div class="cart-item-controls">
-                    <button class="add-to-cart-from-fav" data-index="${index}">
-                        <i class="fas fa-shopping-cart"></i> В корзину
+                    <button class="add-to-cart-from-fav add-to-cart-btn" data-index="${index}" title="Добавить в корзину">
+                        <i class="fas fa-shopping-cart"></i>
                     </button>
                     <button class="remove-favorite" data-index="${index}">×</button>
                 </div>
@@ -139,13 +139,13 @@ function updateFavoritesDisplay() {
         if (addAllBtn) addAllBtn.disabled = false;
     }
 
-    // Add event listeners to add to cart buttons
+    // Ajouter des écouteurs d'événements aux boutons d'ajout au panier
     document.querySelectorAll('.add-to-cart-from-fav').forEach(btn => {
         btn.addEventListener('click', function () {
             const index = parseInt(this.getAttribute('data-index'));
             const item = favorites[index];
 
-            // Check if item already exists in cart
+            // Vérifier si l'article existe déjà dans le panier
             const existingItem = cart.find(cartItem => cartItem.name === item.name);
 
             if (existingItem) {
@@ -164,16 +164,16 @@ function updateFavoritesDisplay() {
             updateCartCounter();
 
             // Animation
-            this.innerHTML = '<i class="fas fa-check"></i> Добавлено!';
+            this.innerHTML = '<i class="fas fa-check"></i>';
             this.style.background = '#27ae60';
             setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-shopping-cart"></i> В корзину';
+                this.innerHTML = '<i class="fas fa-shopping-cart"></i>';
                 this.style.background = '';
             }, 1500);
         });
     });
 
-    // Add event listeners to remove buttons
+    // Ajouter des écouteurs d'événements aux boutons de suppression
     document.querySelectorAll('.remove-favorite').forEach(btn => {
         btn.addEventListener('click', function () {
             const index = parseInt(this.getAttribute('data-index'));
@@ -184,7 +184,7 @@ function updateFavoritesDisplay() {
     });
 }
 
-// Tab switching functionality
+// Fonctionnalité de changement d'onglet
 function switchTab(tabName) {
     const tabs = document.querySelectorAll('.tab-btn');
     const cartContent = document.getElementById('cart-content');
@@ -205,7 +205,7 @@ function switchTab(tabName) {
     }
 }
 
-// Modal functionality
+// Fonctionnalité modale
 const orderModal = document.getElementById('orderModal');
 const successModal = document.getElementById('successModal');
 const closeBtns = document.querySelectorAll('.close-btn');
@@ -224,14 +224,14 @@ window.addEventListener('click', function (event) {
     }
 });
 
-// Checkout functionality
+// Fonctionnalité de paiement
 document.getElementById('checkout-btn').addEventListener('click', function () {
     if (cart.length > 0) {
         orderModal.style.display = 'block';
     }
 });
 
-// Order form submission
+// Soumission du formulaire de commande
 document.getElementById('orderForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -240,7 +240,7 @@ document.getElementById('orderForm').addEventListener('submit', function (e) {
     const customerAddress = document.getElementById('customerAddress').value;
     const orderNotes = document.getElementById('orderNotes').value;
 
-    // Create order object
+    // Créer l'objet commande
     const order = {
         customer: {
             name: customerName,
@@ -254,28 +254,28 @@ document.getElementById('orderForm').addEventListener('submit', function (e) {
         id: Date.now()
     };
 
-    // Save order to localStorage (in a real app, this would be sent to server)
+    // Sauvegarder la commande dans localStorage (dans une vraie app, ceci serait envoyé au serveur)
     const orders = JSON.parse(localStorage.getItem('orders')) || [];
     orders.push(order);
     localStorage.setItem('orders', JSON.stringify(orders));
 
-    // Clear cart
+    // Vider le panier
     cart = [];
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    // Close order modal and show success
+    // Fermer la modale de commande et afficher le succès
     orderModal.style.display = 'none';
     successModal.style.display = 'block';
 
-    // Reset form
+    // Réinitialiser le formulaire
     this.reset();
 
-    // Update displays
+    // Mettre à jour les affichages
     updateCartDisplay();
     updateCartCounter();
 });
 
-// Add all favorites to cart functionality
+// Fonctionnalité d'ajout de tous les favoris au panier
 document.getElementById('add-all-to-cart-btn').addEventListener('click', function () {
     favorites.forEach(item => {
         // Check if item already exists in cart
@@ -307,9 +307,9 @@ document.getElementById('add-all-to-cart-btn').addEventListener('click', functio
     }, 1500);
 });
 
-// Initialize page
+// Initialiser la page
 document.addEventListener('DOMContentLoaded', function () {
-    // Tab switching
+    // Changement d'onglet
     document.querySelectorAll('.tab-btn').forEach(tab => {
         tab.addEventListener('click', function () {
             const tabName = this.getAttribute('data-tab');
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Load initial data
+    // Charger les données initiales
     updateCartDisplay();
     updateCartCounter();
 });

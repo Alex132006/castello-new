@@ -6,7 +6,7 @@
                 <div class="loading-content">
                     <img src="image copy.png" alt="Логотип Кафе Кастелло Пан Африка" class="loading-logo">
                     <h2>добро пожаловать</h2>
-                    <h3>В</h3>
+                    <h3>В</h3>Console.log("");
                     <h1>Кастелло Пан Африка</h1>
                     <div class="spinner"></div>
                     <p>Загрузка...</p>
@@ -157,12 +157,24 @@
         // Fonction pour ajouter aux favoris
         function addToFavorites(name, price) {
             const priceValue = parseInt(price.replace('₽', '').replace(/\s/g, ''));
+            // Find the menu item that contains this name
+            const menuItems = document.querySelectorAll('.menu-item');
+            let image = '';
+            for (let item of menuItems) {
+                const title = item.querySelector('.item-title');
+                if (title && title.textContent.trim() === name.trim()) {
+                    const img = item.querySelector('img');
+                    image = img ? img.src : '';
+                    break;
+                }
+            }
             const existingItem = favorites.find(item => item.name === name);
 
             if (!existingItem) {
                 favorites.push({
                     name: name,
                     price: priceValue,
+                    image: image,
                     id: Date.now()
                 });
                 localStorage.setItem('favorites', JSON.stringify(favorites));
