@@ -404,7 +404,6 @@
 
         // Food Details Modal Functionality
         const foodModal = document.getElementById("foodModal");
-        const foodDescription = document.getElementById("foodDescription");
         const closeBtn = document.querySelector("#foodModal .close-btn");
 
         // Close modal when clicking the close button
@@ -418,6 +417,105 @@
                 foodModal.style.display = "none";
             }
         };
+
+        // Function to get section name from menu item
+        function getSectionFromMenuItem(menuItem) {
+            // Find the closest section element
+            const section = menuItem.closest('section');
+            if (section) {
+                return section.id;
+            }
+            return null;
+        }
+
+        // Function to get all menu items from a section
+        function getMenuItemsFromSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                return Array.from(section.querySelectorAll('.menu-item'));
+            }
+            return [];
+        }
+
+        // Function to populate the product modal
+        function openProductModal(menuItem) {
+            const image = menuItem.querySelector('img').src;
+            const title = menuItem.querySelector('.item-title').textContent;
+            const priceElement = menuItem.querySelector('.montant') || menuItem.querySelector('.item-price');
+            const price = priceElement ? priceElement.textContent : 'Цена не указана';
+
+            // Populate main product
+            document.getElementById('mainProductImage').src = image;
+            document.getElementById('mainProductTitle').textContent = title;
+            document.getElementById('mainProductPrice').textContent = price;
+
+            // Get section and populate related products
+            const sectionId = getSectionFromMenuItem(menuItem);
+            const relatedItems = getMenuItemsFromSection(sectionId).filter(item => item !== menuItem);
+
+            const relatedProductsList = document.getElementById('relatedProductsList');
+            relatedProductsList.innerHTML = '';
+
+            // Show up to 4 related products
+            relatedItems.slice(0, 4).forEach(item => {
+                const relatedImage = item.querySelector('img').src;
+                const relatedTitle = item.querySelector('.item-title').textContent;
+                const relatedPriceElement = item.querySelector('.montant') || item.querySelector('.item-price');
+                const relatedPrice = relatedPriceElement ? relatedPriceElement.textContent : 'Цена не указана';
+
+                const relatedItem = document.createElement('div');
+                relatedItem.className = 'related-product-item';
+                relatedItem.innerHTML = `
+                    <img src="${relatedImage}" alt="${relatedTitle}">
+                    <div class="related-product-info">
+                        <h4>${relatedTitle}</h4>
+                        <p>${relatedPrice}</p>
+                    </div>
+                `;
+
+                // Add click event to open this related product
+                relatedItem.addEventListener('click', function() {
+                    openProductModal(item);
+                });
+
+                relatedProductsList.appendChild(relatedItem);
+            });
+
+            // Show modal
+            foodModal.style.display = "block";
+        }
+
+        // Add click event listeners to all menu items
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Prevent default if it's a link or button
+                if (e.target.tagName === 'BUTTON' || e.target.tagName === 'A') {
+                    return;
+                }
+                openProductModal(this);
+            });
+        });
+
+        // Handle add to cart from modal
+        document.getElementById('addToCartModal').addEventListener('click', function() {
+            const title = document.getElementById('mainProductTitle').textContent;
+            const price = document.getElementById('mainProductPrice').textContent;
+            const image = document.getElementById('mainProductImage').src;
+
+            addToCart(title, price, 1, image);
+
+            // Close modal after adding to cart
+            foodModal.style.display = "none";
+
+            // Animation feedback
+            this.innerHTML = '<i class="fas fa-check"></i> Добавлено!';
+            this.style.background = 'linear-gradient(135deg, hsla(120, 59%, 50%, 0.8), hsla(120, 59%, 40%, 0.8))';
+
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-shopping-cart"></i> Добавить в корзину';
+                this.style.background = 'linear-gradient(135deg, #d4af37 0%, #b8952c 100%)';
+            }, 1500);
+        });
 
         // Cookie Consent Banner Functionality
         document.addEventListener("DOMContentLoaded", function () {

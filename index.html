@@ -2251,9 +2251,29 @@
 
     <!-- Food Details Modal -->
     <div id="foodModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content product-modal">
             <span class="close-btn">&times;</span>
-            <p id="foodDescription"></p>
+            <div class="product-details">
+                <div class="main-product">
+                    <div class="product-image">
+                        <img id="mainProductImage" src="" alt="Product Image">
+                    </div>
+                    <div class="product-info">
+                        <h2 id="mainProductTitle"></h2>
+                        <p class="product-price" id="mainProductPrice"></p>
+                        <p class="product-description" id="mainProductDescription">Наслаждайтесь этим вкусным блюдом из нашего меню Кастелло Пан Африка.</p>
+                        <button class="add-to-cart-modal" id="addToCartModal">
+                            <i class="fas fa-shopping-cart"></i> Добавить в корзину
+                        </button>
+                    </div>
+                </div>
+                <div class="related-products">
+                    <h3>Другие блюда из этой категории</h3>
+                    <div class="related-products-list" id="relatedProductsList">
+                        <!-- Related products will be populated here -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
