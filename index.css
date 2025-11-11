@@ -28,7 +28,7 @@ a:focus {
 }
 
 body {
-  background-color: #442d0a80;
+  background-color: #442d0ad3;
   color: var(--text-dark);
   /* background: url(); */
   /* background: url('image restaurant\фон.jpg') no-repeat center center fixed; */
@@ -44,7 +44,7 @@ body {
   margin: 0 auto;
   width: 100%;
   height: 150px;
-  background: #ffffff00;
+  background: #00000000;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   position: fixed;
@@ -77,20 +77,18 @@ body {
 /*Gestion l'horloge */
 .heure {
   color: var(--text-light);
+  font-family: cursive;
   font-weight: bold;
-  position: relative;
-  font-family: "Foldit", sans-serif;
-  font-weight: bold;
-  top: -50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -25px;
 }
 
 .events-menu {
-  position: fixed;
-  top: 95px;
-  right: 40px;
+  position: absolute;
+  top: 85px;
+  right: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,14 +104,13 @@ body {
 }
 .events-menu:hover {
   border: 1px solid rgb(253, 253, 253);
-  width: 135px;
-  height: 33px;
+  padding: 1px;
 }
 
 .events-menu-a {
-  position: fixed;
-  top: 58px;
-  right: 50px;
+  position: absolute;
+  top: 50px;
+  right: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,16 +126,15 @@ body {
 }
 .events-menu-a:hover {
   border: 1px solid rgb(253, 253, 253);
-  width: 94px;
-  height: 31px;
+  padding: 11px;
 }
 
 .signal {
   position: absolute;
-  top: 47px; 
-  right: 110px;
-  width: 17px;
-  height: 17px;
+  top: 44px; 
+  right: 90px;
+  width: 15px;
+  height: 15px;
   background: red;
   color: rgb(255, 255, 255);
   font-size: 12px;
@@ -150,6 +146,14 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1;
+}
+
+h2 {
+  font-family: cursive;
+}
+h3 {
+  font-family: cursive;
+  font-size: 13px;
 }
 
 option {
@@ -296,7 +300,7 @@ option {
   font-family: "Courier New", monospace;
 }
 
-.add-to-cart-btn {
+.add-to-cart-btn  {
   background: linear-gradient(
     135deg,
     hsla(120, 59%, 40%, 0.7),
@@ -304,12 +308,14 @@ option {
   );
   color: var(--text-light);
   border: 1px solid rgba(212, 175, 55, 0.5);
-  padding: 8px 10px;
+  width: 40px;
+  height: 25px;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
-  position: absolute;
-  right: 9px;
+  position: relative;
+  top: 145px;
+  right: -100px;
   transition: var(--transition);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -552,9 +558,11 @@ option {
   position: fixed;
   top: 20px;
   left: 20px;
-  padding: 10px;
+  padding: 4px;
   border-radius: 50%;
-  transition: var(--transition);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1001;
   background: rgba(0, 0, 0, 0.3);
 }
@@ -712,35 +720,54 @@ section {
 /*le container des noms d'articles*/
 .menu-item {
   background-color: rgba(78, 78, 78, 0);
-  color: rgba(253, 253, 253, 0.686);
-  border: 1px solid rgba(255, 225, 0, 0.435);
-  border-radius: 50px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Optimisé */
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
   padding: 15px;
-  text-align: center;
-  will-change: transform; /* Optimisation performance */
+  position: relative;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Effet au survol amélioré */
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.menu-item:hover::before {
+    left: 100%;
+}
+
 .menu-item:hover {
-  transform: translateY(1px);
-  box-shadow: 0 8px 25px 4px rgba(0, 0, 0, 0.4);
-  background-color: rgba(78, 78, 78, 0.1);
+    background: rgba(240, 240, 240, 0);
+    border: 1px solid #00c000;
+    box-shadow: 0 8px 30px rgba(0, 192, 0, 0.2);
+    transform: translateY(-5px) scale(1.02);
 }
 
 /*Gestion des images*/
 .menu-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.menu-item:hover img {
-  transform: scale(1.1);
-  filter: brightness(1.1);
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+    margin-top: -0px;
 }
 
 /*Gestion des articles des grandeurs et ajustement des noms*/
@@ -753,27 +780,32 @@ section {
   padding-top: 10px;
   font-weight: bold;
   font-size: 12px;
+  font-family: cursive;
+  color: rgb(194, 194, 194);
 }
 
 /* Couleur des montats */
-.item-price {
+.montant {
   position: relative;
-  top: -20px;
-  right: -50px;
+  top: 3px;
+  left: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   border-radius: 30px;
-  width: 60px;
-  height: 20px;
-  background: #000000;
-  border: 1px solid #000000;
-  color: #ff0101;
-  box-shadow: 0 4px #d43737;
+  width: 80px;
+  height: 25px;
+  background: #0000006d;
+  border: 1px solid #ffffff78;
+  color: #ffffff;
   font-weight: bold;
-  font-size: 15px;
-  text-align: center;
+  font-size: 14px;
+}
+
+.fa-wallet {
+  margin: 5px;
+  color: rgb(236, 41, 41);
+  padding-top: 0;
 }
 
 .sold-message {
@@ -869,8 +901,8 @@ footer {
   margin-bottom: 20px;
 }
 
-.footer-column h3 {
-  font-size: 16px;
+.footer-column h1 {
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 15px;
   color: var(--text-light);
@@ -886,7 +918,7 @@ footer {
 
 .footer-column ul li a {
   text-decoration: none;
-  font-family: norm;
+  font-family: cursive;
   color: var(--text-light);
   font-size: 14px;
   transition: color 0.3s;
@@ -1633,9 +1665,9 @@ footer {
   }
 
   .logo-castello {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 8px;
+    width: 70px;
+    height: 70px;
+    margin-bottom: -10px;
   }
 
   .heure {

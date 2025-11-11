@@ -53,32 +53,16 @@
             }
         }
 
-        // Gestion des boutons quantité
-        document.querySelectorAll('.quantity-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const menuItem = this.closest('.menu-item');
-                const quantityDisplay = menuItem.querySelector('.quantity-display');
-                let quantity = parseInt(quantityDisplay.textContent);
-
-                if (this.classList.contains('minus-btn') && quantity > 1) {
-                    quantity -= 1;
-                } else if (this.classList.contains('plus-btn')) {
-                    quantity += 1;
-                }
-
-                quantityDisplay.textContent = quantity;
-            });
-        });
+        // Gestion des boutons quantité (removed since quantity controls are no longer in the HTML structure)
 
         // Boutons "В корзину"
         document.querySelectorAll('.add-to-cart-btn').forEach(button => {
             button.addEventListener('click', function () {
                 const menuItem = this.closest('.menu-item');
-                const name = menuItem.querySelector('.item-title span:first-child').textContent;
-                const price = menuItem.querySelector('.item-price').textContent;
-                const quantity = parseInt(menuItem.querySelector('.quantity-display').textContent);
+                const name = menuItem.querySelector('.item-title').textContent;
+                const price = menuItem.querySelector('.montant').textContent;
 
-                addToCart(name, price, quantity);
+                addToCart(name, price, 1);
 
                 // Animation de confirmation
                 const originalHTML = this.innerHTML;
@@ -149,8 +133,8 @@
         document.querySelectorAll('.favorite-btn').forEach(btn => {
             btn.addEventListener('click', function () {
                 const menuItem = this.closest('.menu-item');
-                const name = menuItem.querySelector('.item-title span:first-child').textContent;
-                const price = menuItem.querySelector('.item-price').textContent;
+                const name = menuItem.querySelector('.item-title').textContent;
+                const price = menuItem.querySelector('.montant').textContent;
 
                 this.classList.toggle('active');
                 const icon = this.querySelector('i');
@@ -195,7 +179,7 @@
             document.querySelectorAll('.favorite-btn').forEach(btn => {
                 const menuItem = btn.closest('.menu-item');
                 if (!menuItem) return; // Skip if not inside a .menu-item (e.g., promo section)
-                const name = menuItem.querySelector('.item-title span:first-child').textContent;
+                const name = menuItem.querySelector('.item-title').textContent;
                 const icon = btn.querySelector('i');
 
                 const isFavorite = favorites.some(item => item.name === name);
