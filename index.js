@@ -1,41 +1,46 @@
-// Loading screen with restaurant name
+// Loading screen with restaurant name - show only once
         window.addEventListener('load', function () {
-            const loadingScreen = document.createElement('div');
-            loadingScreen.id = 'loading-screen';
-            loadingScreen.innerHTML = `
-                <div class="loading-content">
-                    <img src="image copy.png" alt="Логотип Кафе Кастелло Пан Африка" class="loading-logo">
-                    <h2>добро пожаловать</h2>
-                    <h3>В</h3>
-                    <h1>Кастелло Пан Африка</h1>
-                    <div class="spinner"></div>
-                    <p>Загрузка...</p>
-                </div>
-            `;
-            loadingScreen.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(135deg, #442d0a 0%, #d4af37 100%);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 9999;
-                color: white;
-                font-family: 'Playfair Display', Georgia, serif;
-                text-align: center;
-            `;
-            document.body.appendChild(loadingScreen);
+            if (!localStorage.getItem('hasSeenLoading')) {
+                const loadingScreen = document.createElement('div');
+                loadingScreen.id = 'loading-screen';
+                loadingScreen.innerHTML = `
+                    <div class="loading-content">
+                        <img src="image copy.png" alt="Логотип Кафе Кастелло Пан Африка" class="loading-logo">
+                        <h2>добро пожаловать</h2>
+                        <h3>В</h3>
+                        <h1>Кастелло Пан Африка</h1>
+                        <div class="spinner"></div>
+                        <p>Загрузка...</p>
+                    </div>
+                `;
+                loadingScreen.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #442d0a 0%, #d4af37 100%);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 9999;
+                    color: white;
+                    font-family: 'Playfair Display', Georgia, serif;
+                    text-align: center;
+                `;
+                document.body.appendChild(loadingScreen);
 
-            // Hide loading screen after 3 seconds
-            setTimeout(function () {
-                loadingScreen.style.opacity = '0';
+                // Hide loading screen after 3 seconds
                 setTimeout(function () {
-                    loadingScreen.remove();
-                }, 200);
-            }, 900);
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(function () {
+                        loadingScreen.remove();
+                    }, 200);
+                }, 900);
+
+                // Mark as seen
+                localStorage.setItem('hasSeenLoading', 'true');
+            }
         });
 
 
