@@ -148,8 +148,8 @@ body {
   z-index: 1;
 }
 
-h2 {
-  font-family: cursive;
+.New-title {
+  font-family:'Times New Roman', Times, serif;
 }
 h3 {
   font-family: cursive;
