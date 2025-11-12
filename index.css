@@ -1064,19 +1064,25 @@ footer {
 
 .close-btn {
   position: absolute;
-  top: 40px;
+  top: 20px;
   right: 15px;
   font-size: 35px;
+  font-weight: bold;
   cursor: pointer;
-  color: #f6da50;
-  padding: 02px 10px;
+  color: #fcfcfc;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
   border: 1px solid #e0c539;
-  background: #eeeeee5e;
+  background: #8c1717;
+  z-index: 1000;
 }
 
 .close-btn:hover {
-  color: #ffffff;
+  color: #7f7f7f;
   font-size: 38px;
   border: 1px solid #d6d6d5;
 }
@@ -2069,7 +2075,7 @@ footer {
   margin: 10px;
   font-weight: bold;
   position: relative;
-  top: -50px;
+  top: -25px;
 }
 
 .product-price {
@@ -2078,7 +2084,7 @@ footer {
   font-weight: bold;
   margin: 0;
   position: relative;
-  top: -115px;
+  top: -120px;
   left: -70px;
   display: flex;
   justify-content: center;
@@ -2096,7 +2102,7 @@ footer {
   background: linear-gradient(135deg, #166d26 0%, #58f868 100%);
   color: black;
   position: relative;
-  top: -150px;
+  top: -165px;
   right: -220px;
   border: none;
   padding: 10px;
@@ -2144,10 +2150,11 @@ footer {
 }
 
 .related-product-item {
-  display: flex;
+  display: grid;
+  justify-content: center;
   align-items: center;
   backdrop-filter: blur(30px);
-  gap: 15px;
+
   padding: 15px;
   background: rgba(0, 0, 0, 0.295);
   border-radius: 10px;
