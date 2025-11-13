@@ -457,18 +457,17 @@
             relatedProductsList.innerHTML = '';
 
             // Show up to 4 related products
-            relatedItems.slice(0, 4).forEach(item => {
+            relatedItems.slice(0, 15).forEach(item => {
                 const relatedImage = item.querySelector('img').src;
                 const relatedTitle = item.querySelector('.item-title').textContent;
                 const relatedPriceElement = item.querySelector('.montant') || item.querySelector('.item-price');
                 const relatedPrice = relatedPriceElement ? relatedPriceElement.textContent : 'Цена не указана';
-
                 const relatedItem = document.createElement('div');
                 relatedItem.className = 'related-product-item';
                 relatedItem.innerHTML = `
                     <img src="${relatedImage}" alt="${relatedTitle}">
                     <div class="related-product-info">
-                        <h4>${relatedTitle}</h4>
+                        
                         <p>${relatedPrice}</p>
                     </div>
                 `;
