@@ -746,7 +746,7 @@ section {
   background-color: rgba(78, 78, 78, 0);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
   backdrop-filter: blur(15px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.312);
   border-radius: 10px;
   padding: 15px;
   position: relative;
@@ -757,7 +757,6 @@ section {
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  position: relative;
   overflow: hidden;
 }
 
@@ -777,9 +776,8 @@ section {
 }
 
 .menu-item:hover {
-    background: rgba(240, 240, 240, 0);
-    border: 1px solid #00c00037;
-    box-shadow: 0 8px 30px rgba(0, 192, 0, 0.113);
+    border: 1px solid #00c00050;
+    box-shadow: 0 8px rgba(0, 192, 0, 0.452)(0, 192, 0, 0.113);
     transform: translateY(1px) scale(1);
 }
 
@@ -1125,7 +1123,7 @@ footer {
 /* Cart Button */
 .cart-button {
     position: fixed;
-    bottom: 20px;
+    bottom: 40px;
     right: 20px;
     z-index: 1000;
 }
@@ -1134,13 +1132,13 @@ footer {
     background: linear-gradient(135deg, #442d0a 0%, #d4af37 100%);
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #ffffff;  
     font-size: 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
