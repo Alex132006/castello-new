@@ -1134,8 +1134,8 @@ footer {
     background: linear-gradient(135deg, #442d0a 0%, #d4af37 100%);
     border: none;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -2100,8 +2100,9 @@ footer {
   width: 50px;
   height: 30px;
   font-weight: bold;
+  color: #ffffff;
   background: rgb(2, 145, 0);
-  border: 1px solid #eee;
+  border: 1px solid #ffffff;
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -2141,7 +2142,7 @@ footer {
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
   position: relative;
-  top: -60px;
+  top: -40px;
   gap: 20px;
   width: 300px;
   height: 300px;
