@@ -746,7 +746,7 @@ section {
   background-color: rgba(78, 78, 78, 0);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
   backdrop-filter: blur(15px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.312);
   border-radius: 10px;
   padding: 15px;
   position: relative;
@@ -777,9 +777,8 @@ section {
 }
 
 .menu-item:hover {
-    background: rgba(240, 240, 240, 0);
-    border: 1px solid #00c00037;
-    box-shadow: 0 8px 30px rgba(0, 192, 0, 0.113);
+    border: 1px solid #00c00050;
+    box-shadow: 0 8px rgba(0, 192, 0, 0.298)(0, 192, 0, 0.113);
     transform: translateY(1px) scale(1);
 }
 
