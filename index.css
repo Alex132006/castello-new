@@ -778,7 +778,7 @@ section {
 
 .menu-item:hover {
     border: 1px solid #00c00050;
-    box-shadow: 0 8px rgba(0, 192, 0, 0.298)(0, 192, 0, 0.113);
+    box-shadow: 0 8px rgba(0, 192, 0, 0.452)(0, 192, 0, 0.113);
     transform: translateY(1px) scale(1);
 }
 

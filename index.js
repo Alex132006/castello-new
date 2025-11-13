@@ -1,3 +1,5 @@
+
+
 // Loading screen with restaurant name - show only once
         window.addEventListener('load', function () {
             if (!localStorage.getItem('hasSeenLoading')) {
@@ -548,3 +550,4 @@
             });
         });
  
+        
