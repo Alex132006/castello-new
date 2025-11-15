@@ -748,7 +748,8 @@ section {
   backdrop-filter: blur(15px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.312);
   border-radius: 10px;
-  padding: 15px;
+  width: 100%;
+  height: 100%;
   position: relative;
   top: 70px;
   display: flex;
@@ -782,10 +783,10 @@ section {
 }
 
 /*Gestion des images*/
-.menu-item img {
+.menu-item img { 
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     flex-shrink: 0;
     border: 1px solid rgba(0, 0, 0, 0);
@@ -1575,7 +1576,8 @@ footer {
 
   /* 1 colonne sur très petit mobile */
   .menu-items {
-    grid-template-columns: 1fr;
+    grid-template-columns:(2, 1fr);
+    width: 100%;
   }
 
   .menu-item {
@@ -1583,7 +1585,13 @@ footer {
   }
 
   .menu-item img {
+    width: 100%;
     height: 120px;
+    display: flex;
+    align-items: center;
+    object-fit: cover;
+    position: relative;
+    top: -17%;
   }
 
   .carousel-slide {
@@ -1603,6 +1611,25 @@ footer {
   .event-img {
     width: 100%;
     height: auto;
+  }
+
+  .add-to-cart-btn {
+    position: relative;
+    top: 120px;
+    right: -90px;
+    z-index: 1;
+  }
+
+  .montant {
+    position: relative;
+    top: -25px;
+    left: -5px;
+  }
+
+  .item-title {
+    position: relative;
+    top: -20px;
+    left: 5px;
   }
 }
 
