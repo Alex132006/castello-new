@@ -531,7 +531,7 @@ document.getElementById('addToCartModal').addEventListener('click', function() {
     this.style.background = 'linear-gradient(135deg, hsla(120, 59%, 50%, 0.8), hsla(120, 59%, 40%, 0.8))';
 
     setTimeout(() => {
-        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Добавить в корзину';
+        this.innerHTML = '<i class="fas fa-shopping-cart"></i>';
         this.style.background = 'linear-gradient(135deg, #d4af37 0%, #b8952c 100%)';
     }, 1500);
 });
