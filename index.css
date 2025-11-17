@@ -99,8 +99,8 @@ body {
   height: 30px;
   text-align: center;
   color: #ffffff;
-  background: rgb(117, 55, 0);
-  border: 1px solid rgb(181, 147, 94);
+  background: rgba(37, 146, 0, 0.783);
+  border: 1px solid rgba(255, 255, 255, 0.916);
   border-radius: 15px;
 }
 .events-menu:hover {
@@ -121,8 +121,8 @@ body {
   height: 30px;
   text-align: center;
   color: #ffffff;
-  background: rgb(117, 55, 0);
-  border: 1px solid rgb(181, 147, 94);
+  background: rgba(37, 146, 0, 0.783);
+  border: 1px solid rgb(255, 255, 255, 0.916);
   border-radius: 15px;
 }
 .events-menu-a:hover {
