@@ -30,7 +30,7 @@ body {
 /* Gestion du header */
 .nom-castello {
   color: #d4af37;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   text-align: center;
@@ -42,24 +42,11 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 2px solid rgb(142, 109, 2);
+  border: 2px solid rgb(190, 147, 2);
   position: relative;
   top: 10px;
   left: 20px;
 }
-
-/*Gestion l'horloge */
-/* .heure {
-  color: #eee;
-  font-size: 15px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -25px;
-  position: absolute;
-  right: 40px;
-} */
 
 .back-btn {
     position: absolute;
@@ -75,8 +62,8 @@ body {
   height: 40px;
   text-align: center;
   color: #ffffff;
-  background: rgb(142, 109, 2);
-  border: 1px solid rgb(244, 215, 120);
+  background: rgb(89, 7, 0);
+  border: 1px solid rgba(244, 215, 120, 0.872);
   border-radius: 20px;
 }
 
