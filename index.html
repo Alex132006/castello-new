@@ -6,50 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кафе Кастелло Пан Африка</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../css/index.css">
     <link rel="shortcut icon" href="image copy.png">
     <link rel="icon" href="image copy.png" type="image/x-icon">
     <link rel="icon" href="image copy.png" type="image/png" sizes="any">
     <link rel="apple-touch-icon" href="image copy.png" sizes="180x180">
     <link rel="manifest" href="/manifest.json">
 
-    <style>
-        .menu-item img {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-item img:hover {
-            transform: scale(1.02);
-        }
-
-        .related-product-item {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .related-product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .carousel-slide img {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .carousel-slide img:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
+<style>
+
+/* NAVIGATION AVEC EFFET GLACE - CENTRÉE */
+.dan {
+    background: rgba(255, 255, 255, 0.585);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(50px) saturate(180%);
+    border-radius: 50px;
+    border: 1px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 70px;
+    z-index: 1000;
+    align-items: center;
+    padding: 8px 20px;
+    box-shadow: 0 8px 30px 30px rgba(0, 0, 0, 0.236);
+    max-width: 90%;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    min-width: 60px;
+    text-decoration: none;
+    color: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.nav-item:hover::before {
+    left: 100%;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-3px);
+    color: #333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item.active {
+    color: #0088cc;
+    background: rgba(0, 136, 204, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #0088cc;
+    border-radius: 50%;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-item.active i {
+    transform: scale(1.1);
+}
+
+.nav-item span {
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+}
+</style>
 
 <body>
     <div class="container-haut" id="acceuil">
         <div class="nom-castello">
             <h2>Кастелло Пан Африка</h2>
         </div>
-        <img src="image copy.png" class="logo-castello" alt="Логотип Кастелло Пан Африка">
+        <img src="../images/image copy.png" class="logo-castello" alt="Логотип Кастелло Пан Африка">
         <div class="heure">
             <span> Пc-Вс:<br> 12:00 - 01:00</span>
         </div>
@@ -84,6 +153,7 @@
         </nav>
     </div>
 
+
     <!-- Carousel Section -->
     <section class="pub-carousel-section">
         <div class="New-title">
@@ -91,259 +161,277 @@
         </div>
         <div class="carousel-container">
             <div class="carousel-track">
-                
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="new Бергер Легионер.jpg" alt="Бургер Легионер">
+                    <img src="../images/new Бергер Легионер.jpg" alt="Бургер Легионер">
                     <div class="slide-content">
                         <h4>Бургер Легионер</h4>
                         <p class="price"><br><span class="old-price"></span> 480₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="new Башня Свободы.jpg" alt="Башня Свободы">
+                    <img src="../images/new Башня Свободы.jpg" alt="Башня Свободы">
                     <div class="slide-content">
                         <h4>Башня Свободы</h4>
                         <p class="price"><br><span class="old-price"></span> 780₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="new Бергер Техас.jpg" alt="Бургер Техас">
+                    <img src="../images/new Бергер Техас.jpg" alt="Бургер Техас">
                     <div class="slide-content">
                         <h4>Бургер Техас</h4>
                         <p class="price"><br><span class="old-price"></span> 550₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="new Бургер Калифорния.jpg" alt="Бургер Калифорния">
+                    <img src="../images/new Бургер Калифорния.jpg" alt="Бургер Калифорния">
                     <div class="slide-content">
                         <h4>Бургер Калифорния</h4>
                         <p class="price"><br><span class="old-price"></span> 515₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="new Бургер Рокфор.jpg" alt="Бургер Рокфор">
+                    <img src="../images/new Бургер Рокфор.jpg" alt="Бургер Рокфор">
                     <div class="slide-content">
                         <h4>Бургер Рокфор</h4>
                         <p class="price"><br><span class="old-price"></span> 480₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="new Дабл Рокфор.jpg" alt="Дабл Рокфор">
+                    <img src="../images/new Дабл Рокфор.jpg" alt="Дабл Рокфор">
                     <div class="slide-content">
                         <h4>Дабл Рокфор</h4>
                         <p class="price"><br><span class="old-price"></span> 650₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="new Шеф-бургер.jpg" alt="Шеф-бургер">
+                    <img src="../images/new Шеф-бургер.jpg" alt="Шеф-бургер">
                     <div class="slide-content">
                         <h4>Шеф-бургер</h4>
                         <p class="price"><br><span class="old-price"></span> 400₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
                     <p class="new-slide">New</p>
-                    <img src="Бургер Кастелло new.jpg" alt="Бургер Кастелло">
+                    <img src="../images/Бургер Кастелло new.jpg" alt="Бургер Кастелло">
                     <div class="slide-content">
                         <h4>Бургер Кастелло</h4>
                         <p class="price"><br><span class="old-price"></span> 600₽</p>
-                        <button class="btn" type="button" title="В корзину"><i
-                                class="fas fa-shopping-cart"></i></button>
+                        <button class="btn" type="button" title="В корзину"><i class="fas fa-shopping-cart"></i></button>
                     </div>
                 </div>
-
+    
                 <div class="carousel-slide">
-                    <img src="Акция по понедельникам.jpg" alt="Бургер Кастелло">
+                    <img src="../images/Акция по понедельникам.jpg" alt="Бургер Кастелло">
                 </div>
-
+    
             </div>
         </div>
     </section>
-
-
-    <!--<div class="gallery-item enu-item">
-        <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
-        </button>
-        <img src="image copy 2.png" alt="АКЦИЯ ПО ПОНЕДЕЛЬНИКАМ 2 ПИЦЦЫ ЗА 500₽">
-        <button class="favorite-btn" title="Добавить в избранное">
-        </button>
-    </div>-->
 
     <!-- Promotions Section -->
     <section id="sold">
         <div class="container">
             <div class="menu-category">
-                <h3 class="category-sold">Выгодно</h3>
-                <h3 class="sold-message">Акция по понедельникам 2 Пиццы за 500₽</h3>
+                <!-- <h3 class="category-sold">Выгодно</h3>
+                <h3 class="sold-message">Акция по понедельникам 2 Пиццы за 500₽</h3> -->
                 <div class="gallery">
-                    <div class="gallery-item enu-item">
-                        <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
-                        </button>
-                        <img src="Акция по понедельникам.jpg" alt="АКЦИЯ ПО ПОНЕДЕЛЬНИКАМ 2 ПИЦЦЫ ЗА 500₽">
+                    <div class="menu-item">
                         <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
                         </button>
+                        <img src="../images/Акция по понедельникам.jpg" alt="АКЦИЯ ПО ПОНЕДЕЛЬНИКАМ 2 ПИЦЦЫ ЗА 500₽">
+                        <div class="somme">
+                            <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <p class="montant">500₽</p>
+                        </div>
+                        <p class="item-title">АКЦИЯ ПО ПОНЕДЕЛЬНИКАМ 2 ПИЦЦЫ ЗА 500₽</p>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
+<div class="dan-container">
+    <div class="dan">
+        <div class="nav-item" id="nav-transport" data-section="transport">
+            <i class="fa-solid fa-taxi"></i>
+            <span>Transport</span>
+        </div>
+        <div class="nav-item" id="nav-livraison" data-section="livraison">
+            <i class="fa-solid fa-truck"></i>
+            <span>Livraison</span>
+        </div>
+        <div class="nav-item" id="nav-restaurant" data-section="restaurant">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Restaurant</span>
+        </div>
+        <div class="nav-item active" id="nav-hotel" data-section="hotel">
+            <i class="fa-solid fa-square-h"></i>
+            <span>Hôtel</span>
+        </div>
+        <div class="nav-item" id="nav-boutique" data-section="boutique">
+            <i class="fa-solid fa-store"></i>
+            <span>Boutique</span>
+        </div>
+        <div class="nav-item" id="nav-profil" data-section="profil">
+            <i class="fa-solid fa-shopping-cart"></i>
+            <span>Panier</span>
+        </div>
+    </div>
+</div>
+    
     <!-- Breakfast Section -->
     <section id="dejeuner">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">ЗАВТРАКИ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="Break Time Блинчики с клубничным джемом и шоколадным топпингом.jpg"
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Break Time Блинчики с клубничным джемом и шоколадным топпингом.jpg"
                             alt="БЛИНЧИКИ С КЛУБНИЧНЫМ ДЖЕМОМ И ШОКОЛАДНЫМ ТОППИНГОМ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БЛИНЧИКИ С КЛУБНИЧНЫМ ДЖЕМОМ И ШОКОЛАДНЫМ ТОППИНГОМ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Break Time блинчики со сметаной и медом .jpg" alt="БЛИНЧИКИ СО СМЕТАНОЙ И МЕДОМ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Break Time блинчики со сметаной и медом .jpg"
+                            alt="БЛИНЧИКИ СО СМЕТАНОЙ И МЕДОМ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БЛИНЧИКИ СО СМЕТАНОЙ И МЕДОМ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Break Time Омлет с овощами и сыр чеддер.jpg" alt="ОМЛЕТ С ОВОЩАМИ И СЫР ЧЕДДЕР">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Break Time Омлет с овощами и сыр чеддер.jpg" alt="ОМЛЕТ С ОВОЩАМИ И СЫР ЧЕДДЕР">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">370₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ОМЛЕТ С ОВОЩАМИ И СЫР ЧЕДДЕР</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Break Time омлет шпинат с пармезаном.jpg" alt="ОМЛЕТ ШПИНАТ С ПАРМЕЗАНОМ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Break Time омлет шпинат с пармезаном.jpg" alt="ОМЛЕТ ШПИНАТ С ПАРМЕЗАНОМ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">370₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ОМЛЕТ ШПИНАТ С ПАРМЕЗАНОМ</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Business Lunch Section -->
     <section id="bisness">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">Б-ЛАНЧ</h3>
-                <div class="menu-items">
+                <div class="menu-grid">
                     <div class="menu-item">
-                        <img src="Бизнес ланч 1 неделя.jpg" alt="САЛАТ + СУП + ВТОРОЕ + НАПИТОК">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Бизнес ланч 1 неделя.jpg" alt="САЛАТ + СУП + ВТОРОЕ + НАПИТОК">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">540₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">САЛАТ + СУП + ВТОРОЕ + НАПИТОК</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Бизнес ланч 2 неделя.jpg" alt="САЛАТ + СУП + НАПИТОК">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Бизнес ланч 2 неделя.jpg" alt="САЛАТ + СУП + НАПИТОК">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">310₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">САЛАТ + СУП + НАПИТОК</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Бизнес ланч 3 неделя.jpg" alt="САЛАТ + ВТОРОЕ + НАПИТОК">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Бизнес ланч 3 неделя.jpg" alt="САЛАТ + ВТОРОЕ + НАПИТОК">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">440₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">САЛАТ + ВТОРОЕ + НАПИТОК</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Бизнес ланч 4 неделя.jpg" alt="СУП + ВТОРОЕ + НАПИТОК">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Бизнес ланч 4 неделя.jpg" alt="СУП + ВТОРОЕ + НАПИТОК">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину">
                                 <i class="fas fa-shopping-cart"></i>
                             </button>
                             <p class="montant">360₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">СУП + ВТОРОЕ + НАПИТОК</p>
                     </div>
@@ -351,1657 +439,1621 @@
             </div>
         </div>
     </section>
-    <!--fin bisness launch-->
-
-
-
+    
     <!--combo-->
     <section id="combo">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">КОМБО<br> C 12:00 ДО 15:00</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="бургеры DMW с картошкой фри.jpg" alt="БУРГЕРЫ DMW С КАРТОШКОЙ ФРИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/бургеры DMW с картошкой фри.jpg" alt="БУРГЕРЫ DMW С КАРТОШКОЙ ФРИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">620₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БУРГЕРЫ DMW С КАРТОШКОЙ ФРИ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 1 Кыкьл вот суп.jpg" alt="ГОРЯЧИЕ БЛЮДА АФРИКИ 1 КЫКЬЛ ВОТ СУП">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 1 Кыкьл вот суп.jpg"
+                            alt="ГОРЯЧИЕ БЛЮДА АФРИКИ 1 КЫКЬЛ ВОТ СУП">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">720₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ГОРЯЧИЕ БЛЮДА АФРИКИ 1 КЫКЬЛ ВОТ СУП</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 2 фахита.jpg" alt="ГОРЯЧИЕ БЛЮДА 2 ФАХИТА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 2 фахита.jpg" alt="ГОРЯЧИЕ БЛЮДА 2 ФАХИТА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">640₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ГОРЯЧИЕ БЛЮДА 2 ФАХИТА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 2 КЫК ВОТ .jpg" alt="ГОРЯЧИЕ БЛЮДА АФРИКИ 2 КЫК ВОТ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 2 КЫК ВОТ .jpg" alt="ГОРЯЧИЕ БЛЮДА АФРИКИ 2 КЫК ВОТ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">600₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ГОРЯЧИЕ БЛЮДА АФРИКИ 2 КЫК ВОТ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 2 КУРИНЫЙ КАРРИ.jpg" alt="ГОРЯЧИЕ БЛЮДА 2 КУРИНЫЙ КАРРИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 2 КУРИНЫЙ КАРРИ.jpg" alt="ГОРЯЧИЕ БЛЮДА 2 КУРИНЫЙ КАРРИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">600₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ГОРЯЧИЕ БЛЮДА 2 КУРИНЫЙ КАРРИ</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!--fin combo-->
-
-
-
+    
     <!--salade-->
     <section id="salade">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">САЛАТЫ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="салаты греческий.jpg" alt="САЛАТЫ ГРЕЧЕСКИЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/салаты греческий.jpg" alt="САЛАТЫ ГРЕЧЕСКИЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">395₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">САЛАТЫ ГРЕЧЕСКИЙ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="салаты Франческа.jpg" alt="САЛАТЫ ФРАНЧЕСКА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/салаты Франческа.jpg" alt="САЛАТЫ ФРАНЧЕСКА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">САЛАТЫ ФРАНЧЕСКА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="салаты цезарь с обжаренные креветками  и беконом.jpg"
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/салаты цезарь с обжаренные креветками  и беконом.jpg"
                             alt="САЛАТЫ ЦЕЗАРЬ С ОБЖАРЕННЫЕ КРЕВЕТКАМИ И БЕКОНОМ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">450₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">САЛАТЫ ЦЕЗАРЬ С ОБЖАРЕННЫЕ КРЕВЕТКАМИ И БЕКОНОМ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="салаты цезарь.jpg" alt="САЛАТЫ ЦЕЗАРЬ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/салаты цезарь.jpg" alt="САЛАТЫ ЦЕЗАРЬ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">320₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">САЛАТЫ ЦЕЗАРЬ</p>
                     </div>
-
+    
                 </div>
             </div>
+        </div>
     </section>
-    <!--fin salade-->
-
-
-
+    
     <!-- les plats europens -->
     <section id="plats-europeens">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">ОСНОВНЫЕ БЛЮДА</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 1 КУРИНАЯ ГРУДКА НА ГРИЛИ.jpg" alt="КУРИНАЯ ГРУДКА НА ГРИЛИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 1 КУРИНАЯ ГРУДКА НА ГРИЛИ.jpg" alt="КУРИНАЯ ГРУДКА НА ГРИЛИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">680₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КУРИНАЯ ГРУДКА НА ГРИЛИ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 1 КУРИНЫЙ КВАРТЕТ НА ГРИЛИ.jpg" alt="КУРИНЫЙ КВАРТЕТ НА ГРИЛИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 1 КУРИНЫЙ КВАРТЕТ НА ГРИЛИ.jpg" alt="КУРИНЫЙ КВАРТЕТ НА ГРИЛИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">1200₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КУРИНЫЙ КВАРТЕТ НА ГРИЛИ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 1 курочка барбекю.jpg" alt="КУРОЧКА БАРБЕКЮ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 1 курочка барбекю.jpg" alt="КУРОЧКА БАРБЕКЮ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">430₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КУРОЧКА БАРБЕКЮ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 1 наггетсы.jpg" alt="НАГГЕТСЫ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 1 наггетсы.jpg" alt="НАГГЕТСЫ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">300₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">НАГГЕТСЫ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 1 ЭСКАЛОП ИЗ КУРИЦЫ.jpg" alt="ЭСКАЛОП ИЗ КУРИЦЫ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 1 ЭСКАЛОП ИЗ КУРИЦЫ.jpg" alt="ЭСКАЛОП ИЗ КУРИЦЫ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">650 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЭСКАЛОП ИЗ КУРИЦЫ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 2 КУРИНЫЙ КАРРИ.jpg" alt="КУРИНЫЙ КАРРИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 2 КУРИНЫЙ КАРРИ.jpg" alt="КУРИНЫЙ КАРРИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">655₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КУРИНЫЙ КАРРИ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 2 ПЛОВ.jpg" alt="ПЛОВ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 2 ПЛОВ.jpg" alt="ПЛОВ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">530₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПЛОВ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 2 СТЕЙК ИЗ СВИНИНЫ.jpg" alt="СТЕЙК ИЗ СВИНИНЫ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 2 СТЕЙК ИЗ СВИНИНЫ.jpg" alt="СТЕЙК ИЗ СВИНИНЫ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">600₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">СТЕЙК ИЗ СВИНИНЫ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 2 фахита.jpg" alt="ФАХИТА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 2 фахита.jpg" alt="ФАХИТА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">655₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ФАХИТА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 2 ФЕТУЧИНИ С КУРИЦЕЙ.jpg" alt="ФЕТУЧИНИ С КУРИЦЕЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 2 ФЕТУЧИНИ С КУРИЦЕЙ.jpg" alt="ФЕТУЧИНИ С КУРИЦЕЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">640₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ФЕТУЧИНИ С КУРИЦЕЙ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 3 БАРАНИНА ТУШЕНАЯ.jpg" alt="БАРАНИНА ТУШЕНАЯ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 3 БАРАНИНА ТУШЕНАЯ.jpg" alt="БАРАНИНА ТУШЕНАЯ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">700₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БАРАНИНА ТУШЕНАЯ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 3 БЕФСТРОГАНОВ ИЗ ГОВЯДИНЫ.jpg" alt="БЕФСТРОГАНОВ ИЗ ГОВЯДИНЫ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 3 БЕФСТРОГАНОВ ИЗ ГОВЯДИНЫ.jpg" alt="БЕФСТРОГАНОВ ИЗ ГОВЯДИНЫ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">750₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БЕФСТРОГАНОВ ИЗ ГОВЯДИНЫ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 3 СКУМБРИЯ С РИСОМ.jpg" alt="СКУМБРИЯ С РИСОМ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 3 СКУМБРИЯ С РИСОМ.jpg" alt="СКУМБРИЯ С РИСОМ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">700 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">СКУМБРИЯ С РИСОМ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 3 СПАГЕТТИ БОЛОНЬЕЗЕ.jpg" alt="СПАГЕТТИ БОЛОНЬЕЗЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 3 СПАГЕТТИ БОЛОНЬЕЗЕ.jpg" alt="СПАГЕТТИ БОЛОНЬЕЗЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">670₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">СПАГЕТТИ БОЛОНЬЕЗЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда 3 ФИЛАДЕЛЬФИЯ.jpg" alt="ФИЛАДЕЛЬФИЯ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда 3 ФИЛАДЕЛЬФИЯ.jpg" alt="ФИЛАДЕЛЬФИЯ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">750₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ФИЛАДЕЛЬФИЯ</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!-- Fin de plats europeens -->
-
-
-
+    
     <!-- les plats africains -->
     <section id="plats-africains">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">БЛЮ.АФРИКИ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 2 Кей вот .jpg" alt="КЕЙ ВОТ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 2 Кей вот .jpg" alt="КЕЙ ВОТ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">850₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КЕЙ ВОТ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 2 КЫК ВОТ .jpg" alt="КЫК ВОТ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 2 КЫК ВОТ .jpg" alt="КЫК ВОТ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">600₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КЫК ВОТ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 3 Беяенету постный.jpg" alt="БЕЯЕНЕТУ ПОСТНЫЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 3 Беяенету постный.jpg" alt="БЕЯЕНЕТУ ПОСТНЫЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">1250₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БЕЯЕНЕТУ ПОСТНЫЙ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 3 Беяенету.jpg" alt="БЕЯЕНЕТУ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 3 Беяенету.jpg" alt="БЕЯЕНЕТУ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">1500₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БЕЯЕНЕТУ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 3 Двойной Тыбс.jpg" alt="ДВОЙНОЙ ТЫБС">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 3 Двойной Тыбс.jpg" alt="ДВОЙНОЙ ТЫБС">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">1500₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ДВОЙНОЙ ТЫБС</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 1 Инджера .jpg" alt="ИНДЖЕРА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 1 Инджера .jpg" alt="ИНДЖЕРА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">180₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ИНДЖЕРА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 1 Кыкьл вот суп.jpg" alt="КЫКЬЛ ВОТ СУП">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 1 Кыкьл вот суп.jpg" alt="КЫКЬЛ ВОТ СУП">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">750₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КЫКЬЛ ВОТ СУП</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 1 Окро-суп.jpg" alt="ОКРО-СУП">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 1 Окро-суп.jpg" alt="ОКРО-СУП">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">800 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ОКРО-СУП</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 1 Пеппер суп.jpg" alt="ПЕППЕР СУП">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 1 Пеппер суп.jpg" alt="ПЕППЕР СУП">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">750 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПЕППЕР СУП</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 1 Широ вот.jpg" alt="ШИРО ВОТ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 1 Широ вот.jpg" alt="ШИРО ВОТ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">600₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ШИРО ВОТ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="горячие блюда Африки 2 ДОРО ВОТ.jpg" alt="ДОРО ВОТ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/горячие блюда Африки 2 ДОРО ВОТ.jpg" alt="ДОРО ВОТ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">750₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ДОРО ВОТ</p>
                     </div>
-
+    
                 </div>
             </div>
+        </div>
     </section>
-    <!-- Fin de plats africains -->
-
-
-
+    
     <!--soupe-->
     <section id="soupes">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">СУПЫ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="супы борщ.jpg" alt="БОРЩ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/супы борщ.jpg" alt="БОРЩ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">380₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БОРЩ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="супы Крем-суп из чечевицы.jpg" alt="КРЕМ-СУП ИЗ ЧЕЧЕВИЦЫ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/супы Крем-суп из чечевицы.jpg" alt="КРЕМ-СУП ИЗ ЧЕЧЕВИЦЫ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КРЕМ-СУП ИЗ ЧЕЧЕВИЦЫ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="супы Лапша-суп.jpg" alt="ЛАПША-СУП">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/супы Лапша-суп.jpg" alt="ЛАПША-СУП">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЛАПША-СУП</p>
                     </div>
-
+    
                 </div>
             </div>
+        </div>
     </section>
-    <!--fin de soupe-->
-
-
-
+    
     <!--side dishes-->
     <section id="side-dishes">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">ГАРНИРЫ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="гарниры картофель по-деревенске 300 г.jpg" alt="КАРТОФЕЛЬ ПО-ДЕРЕВЕНСКЕ 150/300Г">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/гарниры картофель по-деревенске 300 г.jpg"
+                            alt="КАРТОФЕЛЬ ПО-ДЕРЕВЕНСКЕ 150/300Г">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">270/450₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КАРТОФЕЛЬ ПО-ДЕРЕВЕНСКЕ 150/300Г</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="гарниры картофель фри 300 г .jpg" alt="КАРТОФЕЛЬ ФРИ 150/300 Г">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/гарниры картофель фри 300 г .jpg" alt="КАРТОФЕЛЬ ФРИ 150/300 Г">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">250/420₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КАРТОФЕЛЬ ФРИ 150/300 Г</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="гарниры манка.jpg" alt="МАНКА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/гарниры манка.jpg" alt="МАНКА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">250₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МАНКА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="гарниры рис.jpg" alt="РИС">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/гарниры рис.jpg" alt="РИС">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">250₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">РИС</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="гарниры спагетти.jpg" alt="СПАГЕТТИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/гарниры спагетти.jpg" alt="СПАГЕТТИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">330₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">СПАГЕТТИ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="гарниры феттучини.jpg" alt="ФЕТТУЧИНИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/гарниры феттучини.jpg" alt="ФЕТТУЧИНИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">360₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ФЕТТУЧИНИ</p>
                     </div>
-
+    
                 </div>
             </div>
+        </div>
     </section>
-    <!--fin de side dishes-->
-
-
-
+    
     <!--Sauces-->
     <section id="sauces">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">СОУСЫ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="соусы БАРБЕКЮ, СМЕТАНА, КЕТЧУП, ТЫСЯЧА ОСТРОВОВ, МАЙОНЕЗ.jpg"
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/соусы БАРБЕКЮ, СМЕТАНА, КЕТЧУП, ТЫСЯЧА ОСТРОВОВ, МАЙОНЕЗ.jpg"
                             alt="БАРБЕКЮ, СМЕТАНА, КЕТЧУП, ТЫСЯЧА ОСТРОВОВ, МАЙОНЕЗ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">60₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БАРБЕКЮ, СМЕТАНА, КЕТЧУП, ТЫСЯЧА ОСТРОВОВ, МАЙОНЕЗ 50Г</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="соусы ДАТА, ШРИРАЧА, СОЕВЫЙ СОУС, ХАЛАПЕНЬО, ЧЕСНОЧНЫЙ СОУС .jpg"
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/соусы ДАТА, ШРИРАЧА, СОЕВЫЙ СОУС, ХАЛАПЕНЬО, ЧЕСНОЧНЫЙ СОУС .jpg"
                             alt="ДАТА, ШРИРАЧА, СОЕВЫЙ СОУС, ХАЛАПЕНЬО, ЧЕСНОЧНЫЙ СОУС">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">60₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ДАТА, ШРИРАЧА, СОЕВЫЙ СОУС, ХАЛАПЕНЬО, ЧЕСНОЧНЫЙ СОУС 50Г</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="соусы масло эфиопскио .jpg" alt="МАСЛО ЭФИОПСКОЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/соусы масло эфиопскио .jpg" alt="МАСЛО ЭФИОПСКОЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">120₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МАСЛО ЭФИОПСКОЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="соусы МИТМИТА .jpg" alt="МИТМИТА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/соусы МИТМИТА .jpg" alt="МИТМИТА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">80₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МИТМИТА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="соусы перец острый зеленый .jpg" alt="ПЕРЕЦ ОСТРЫЙ ЗЕЛЕНЫЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/соусы перец острый зеленый .jpg" alt="ПЕРЕЦ ОСТРЫЙ ЗЕЛЕНЫЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">60 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПЕРЕЦ ОСТРЫЙ ЗЕЛЕНЫЙ</p>
                     </div>
-
+    
                 </div>
             </div>
+        </div>
     </section>
-    <!--fin de sauces-->
-
-
-
+    
     <!--pizza-->
     <section id="pizza">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">ПИЦЦА</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="Пицца курочка барбекю.jpg" alt="ПИЦЦА КУРОЧКА БАРБЕКЮ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Пицца курочка барбекю.jpg" alt="ПИЦЦА КУРОЧКА БАРБЕКЮ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">480₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПИЦЦА КУРОЧКА БАРБЕКЮ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="пицца лепешка с сыром.jpg" alt="ЛЕПЕШКА С СЫРОМ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/пицца лепешка с сыром.jpg" alt="ЛЕПЕШКА С СЫРОМ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">470₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЛЕПЕШКА С СЫРОМ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Пицца Маргарита.jpg" alt="ПИЦЦА МАРГАРИТА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Пицца Маргарита.jpg" alt="ПИЦЦА МАРГАРИТА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">480₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПИЦЦА МАРГАРИТА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="пицца пепперони.jpg" alt="ПИЦЦА ПЕППЕРОНИ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/пицца пепперони.jpg" alt="ПИЦЦА ПЕППЕРОНИ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">495₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПИЦЦА ПЕППЕРОНИ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="пицца сырная.jpg" alt="ПИЦЦА 4 СЫРА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/пицца сырная.jpg" alt="ПИЦЦА 4 СЫРА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">450₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПИЦЦА 4 СЫРА</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Пицца Цезарь.jpg" alt="ПИЦЦА ЦЕЗАРЬ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Пицца Цезарь.jpg" alt="ПИЦЦА ЦЕЗАРЬ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">550₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПИЦЦА ЦЕЗАРЬ</p>
                     </div>
-
+    
                 </div>
             </div>
+        </div>
     </section>
-    <!--fin de pizza-->
-
-
-
+    
     <!--sandwiches-->
     <section id="sandwiches">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">СЭНДВИЧИ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="сендвичи криспи чикен.jpg" alt="КРИСПИ ЧИКЕН">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/сендвичи криспи чикен.jpg" alt="КРИСПИ ЧИКЕН">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">370₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КРИСПИ ЧИКЕН</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="сендвичи фахита в багете.jpg" alt="ФАХИТА В БАГЕТЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/сендвичи фахита в багете.jpg" alt="ФАХИТА В БАГЕТЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">390₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ФАХИТА В БАГЕТЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="сендвичи фахита из курицы в лаваше.jpg" alt="ФАХИТА ИЗ КУРИЦЫ В ЛАВАШЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/сендвичи фахита из курицы в лаваше.jpg" alt="ФАХИТА ИЗ КУРИЦЫ В ЛАВАШЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">380₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ФАХИТА ИЗ КУРИЦЫ В ЛАВАШЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="сендвичи шурма на тарелке.jpg" alt="ШАУРМА НА ТАРЕЛКЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/сендвичи шурма на тарелке.jpg" alt="ШАУРМА НА ТАРЕЛКЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">480₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ШАУРМА НА ТАРЕЛКЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="сендвичи шурма.jpg" alt="ШАУРМА">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/сендвичи шурма.jpg" alt="ШАУРМА">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">320₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ШАУРМА</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!--fin de sandwiches-->
-
-
-
+    
     <!-- bourger -->
     <section id="bourger">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">БУРГЕР</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
                         <p class="new-slide">New</p>
-                        <img src="new Башня Свободы.jpg" alt="Башня Свободы">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/new Башня Свободы.jpg" alt="Башня Свободы">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">780₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">Башня Свободы</p>
                     </div>
-
+    
                     <div class="menu-item">
                         <p class="new-slide">New</p>
-                        <img src="new Бергер Легионер.jpg" alt="Бургер Легионер">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/new Бергер Легионер.jpg" alt="Бургер Легионер">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
-                            <p class="montant">450₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
+                            <p class="montant">480₽</p>
                         </div>
                         <p class="item-title">Бургер Легионер</p>
                     </div>
-
+    
                     <div class="menu-item">
                         <p class="new-slide">New</p>
-                        <img src="new Бергер Техас.jpg" alt="Бургер Техас">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/new Бергер Техас.jpg" alt="Бургер Техас">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
-                            <p class="montant">500₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
+                            <p class="montant">550₽</p>
                         </div>
                         <p class="item-title">Бургер Техас</p>
                     </div>
-
+    
                     <div class="menu-item">
                         <p class="new-slide">New</p>
-                        <img src="new Бургер Калифорния.jpg" alt="Бургер Калифорния">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/new Бургер Калифорния.jpg" alt="Бургер Калифорния">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">515₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">Бургер Калифорния</p>
                     </div>
-
+    
                     <div class="menu-item">
                         <p class="new-slide">New</p>
-                        <img src="new Бургер Рокфор.jpg" alt="Бургер Рокфор">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/new Бургер Рокфор.jpg" alt="Бургер Рокфор">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
-                            <p class="montant">650₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
+                            <p class="montant">480₽</p>
                         </div>
                         <p class="item-title">Бургер Рокфор</p>
                     </div>
-
+    
                     <div class="menu-item">
                         <p class="new-slide">New</p>
-                        <img src="new Дабл Рокфор.jpg" alt="Дабл Рокфор">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/new Дабл Рокфор.jpg" alt="Дабл Рокфор">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">650₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">Дабл Рокфор</p>
                     </div>
-
+    
                     <div class="menu-item">
                         <p class="new-slide">New</p>
-                        <img src="new Шеф-бургер.jpg" alt="Шеф-бургер">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/new Шеф-бургер.jpg" alt="Шеф-бургер">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">400₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">Шеф-бургер</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!-- Fin de bourger -->
-
-
-
+    
     <!--traditionnel the-->
     <section id="traditionnel">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">ЭФИОПСКИЙ КОФЕ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="Традициональная кофейная церемония Эфиопии на  1 персоны.jpg" alt="НА 1 ПЕРСОНУ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Традициональная кофейная церемония Эфиопии на  1 персоны.jpg"
+                            alt="НА 1 ПЕРСОНУ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">150₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">НА 1 ПЕРСОНУ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Традициональная кофейная церемония Эфиопии на  2 -3 персоны.jpg"
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Традициональная кофейная церемония Эфиопии на  2 -3 персоны.jpg"
                             alt="НА 2 -3 ПЕРСОНЫ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">400₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">НА 2 -3 ПЕРСОНЫ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Традициональная кофейная церемония Эфиопии на  4 -5 персоны.jpg"
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Традициональная кофейная церемония Эфиопии на  4 -5 персоны.jpg"
                             alt="НА 4 -5 ПЕРСОНЫ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">480₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">НА 4 -5 ПЕРСОНЫ</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!--fin de traditionnel-->
-
-
-
+    
     <!-- caffe -->
     <section id="caffe">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">КОФЕ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="кофе Американа.jpg" alt="АМЕРИКАНО">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/кофе Американа.jpg" alt="АМЕРИКАНО">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">180₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">АМЕРИКАНО</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="кофе Американа.jpg" alt="ЭСПРЕССО ДВОЙНОЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/кофе Американа.jpg" alt="ЭСПРЕССО ДВОЙНОЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">220₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЭСПРЕССО ДВОЙНОЙ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="кофе Эспрессо.jpg" alt="ЭСПРЕССО">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/кофе Эспрессо.jpg" alt="ЭСПРЕССО">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">130₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЭСПРЕССО</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="кофе Латте.jpg" alt="ЛАТТЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/кофе Латте.jpg" alt="ЛАТТЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">200₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЛАТТЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="кофе Латте.jpg" alt="ЛАТТЕ С СИРОПОМ НА ВЫБОР">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/кофе Латте.jpg" alt="ЛАТТЕ С СИРОПОМ НА ВЫБОР">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">250₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЛАТТЕ С СИРОПОМ НА ВЫБОР</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="кофе Капучино.jpg" alt="КАПУЧИНО">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/кофе Капучино.jpg" alt="КАПУЧИНО">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">215₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КАПУЧИНО</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="кофе глясе.jpg" alt="ГЛЯСЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/кофе глясе.jpg" alt="ГЛЯСЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">260₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ГЛЯСЕ</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!-- fin de Caffe -->
-
-
-
+    
     <!-- the -->
     <section id="the">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">ЧАЙ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="АМЕРИКАНО">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="АМЕРИКАНО">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">250 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">АМЕРИКАНО</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="КАПУЧИНО">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="КАПУЧИНО">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">300 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">КАПУЧИНО</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ЛАТТЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ЛАТТЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЛАТТЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ЭСПРЕССО">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ЭСПРЕССО">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">200 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЭСПРЕССО</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="АПЕЛЬСИНОВЫЙ ФРЕШ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="АПЕЛЬСИНОВЫЙ ФРЕШ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">300 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">АПЕЛЬСИНОВЫЙ ФРЕШ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="МОРКОВНЫЙ ФРЕШ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="МОРКОВНЫЙ ФРЕШ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">300 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОРКОВНЫЙ ФРЕШ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ЯБЛОЧНЫЙ ФРЕШ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ЯБЛОЧНЫЙ ФРЕШ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">300 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЯБЛОЧНЫЙ ФРЕШ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ТОМАТНЫЙ ФРЕШ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/59d9eff7-058a-4a46-8850-b688c0faef7f.jpg" alt="ТОМАТНЫЙ ФРЕШ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">300 ₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ТОМАТНЫЙ ФРЕШ</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!-- fin de the -->
-
-
-
+    
     <!--dessert-->
     <section id="dessert">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">ДЕСЕРТИ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="десерты Castello .jpg" alt="CASTELLO">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/десерты Castello .jpg" alt="CASTELLO">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">600₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">CASTELLO</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="десерты Sanset over Hawassa .jpg" alt="SANSET OVER HAWASSA">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/десерты Sanset over Hawassa .jpg" alt="SANSET OVER HAWASSA">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">550₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">SANSET OVER HAWASSA</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Десерты Бруснично-кремовый пирог с белым шоколадом.jpg"
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Десерты Бруснично-кремовый пирог с белым шоколадом.jpg"
                             alt="БРУСНИЧНО-КРЕМОВЫЙ ПИРОГ С БЕЛЫМ ШОКОЛАДОМ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">БРУСНИЧНО-КРЕМОВЫЙ ПИРОГ С БЕЛЫМ ШОКОЛАДОМ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="десерты Воздушный.jpg" alt="ВОЗДУШНЫЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/десерты Воздушный.jpg" alt="ВОЗДУШНЫЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ВОЗДУШНЫЙ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="десерты Морковный торт.jpg" alt="МОРКОВНЫЙ ТОРТ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/десерты Морковный торт.jpg" alt="МОРКОВНЫЙ ТОРТ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">320₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОРКОВНЫЙ ТОРТ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="десерты морожное.jpg" alt="МОРОЖНОЕ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/десерты морожное.jpg" alt="МОРОЖНОЕ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">120/240/360₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОРОЖНОЕ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Десерты пирожное манго-маракуйя.jpg" alt="ПИРОЖНОЕ МАНГО-МАРАКУЙЯ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Десерты пирожное манго-маракуйя.jpg" alt="ПИРОЖНОЕ МАНГО-МАРАКУЙЯ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ПИРОЖНОЕ МАНГО-МАРАКУЙЯ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Десерты Тарталетка шоколадная с вишней.jpg" alt="ТАРТАЛЕТКА ШОКОЛАДНАЯ С ВИШНЕЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Десерты Тарталетка шоколадная с вишней.jpg"
+                            alt="ТАРТАЛЕТКА ШОКОЛАДНАЯ С ВИШНЕЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">320₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ТАРТАЛЕТКА ШОКОЛАДНАЯ С ВИШНЕЙ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Десерты Торт воздушный с черникой.jpg" alt="ТОРТ ВОЗДУШНЫЙ С ЧЕРНИКОЙ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Десерты Торт воздушный с черникой.jpg" alt="ТОРТ ВОЗДУШНЫЙ С ЧЕРНИКОЙ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">340₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ТОРТ ВОЗДУШНЫЙ С ЧЕРНИКОЙ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Десерты Чизкейк Нью-Йорк.jpg" alt="ЧИЗКЕЙК НЬЮ-ЙОРК">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Десерты Чизкейк Нью-Йорк.jpg" alt="ЧИЗКЕЙК НЬЮ-ЙОРК">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">280₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЧИЗКЕЙК НЬЮ-ЙОРК</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!--fin de dessert-->
-
-
-
+    
     <!-- les boissons -->
     <section id="boissons">
         <div class="container">
             <div class="menu-category">
                 <h3 class="category-title">НАПИТКИ</h3>
-                <div class="menu-items">
-
+                <div class="menu-grid">
+    
                     <div class="menu-item">
-                        <img src="напитки молочный коктейль ваниль.jpg" alt="МОЛОЧНЫЙ КОКТЕЙЛЬ ВАНИЛЬ 300МЛ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки молочный коктейль ваниль.jpg" alt="МОЛОЧНЫЙ КОКТЕЙЛЬ ВАНИЛЬ 300МЛ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОЛОЧНЫЙ КОКТЕЙЛЬ ВАНИЛЬ 300МЛ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки молочный коктейль клубника.jpg" alt="МОЛОЧНЫЙ КОКТЕЙЛЬ КЛУБНИКА 300МЛ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки молочный коктейль клубника.jpg" alt="МОЛОЧНЫЙ КОКТЕЙЛЬ КЛУБНИКА 300МЛ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОЛОЧНЫЙ КОКТЕЙЛЬ КЛУБНИКА 300МЛ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки молочный коктейль шоколадный .jpg" alt="МОЛОЧНЫЙ КОКТЕЙЛЬ ШОКОЛАДНЫЙ 300МЛ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки молочный коктейль шоколадный .jpg"
+                            alt="МОЛОЧНЫЙ КОКТЕЙЛЬ ШОКОЛАДНЫЙ 300МЛ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">350₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОЛОЧНЫЙ КОКТЕЙЛЬ ШОКОЛАДНЫЙ 300МЛ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки Мохито.jpg" alt="МОХИТО 300МЛ/1Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки Мохито.jpg" alt="МОХИТО 300МЛ/1Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">250/700₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОХИТО 300МЛ/1Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки сок.jpg" alt="СОК 200МЛ/1Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки сок.jpg" alt="СОК 200МЛ/1Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">100/355₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">СОК 200МЛ/1Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки морс .jpg" alt="МОРС 200МЛ/1Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки морс .jpg" alt="МОРС 200МЛ/1Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">100/355₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">МОРС 200МЛ/1Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки чай холодный рич.jpg" alt="ЧАЙ ХОЛОДНЫЙ РИЧ 0,5 Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки чай холодный рич.jpg" alt="ЧАЙ ХОЛОДНЫЙ РИЧ 0,5 Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">170₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ЧАЙ ХОЛОДНЫЙ РИЧ 0,5 Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки вода газированная 0,5 л.jpg" alt="ВОДА ГАЗИРОВАННАЯ 0,5 Л/ 1Л БУТ">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки вода газированная 0,5 л.jpg" alt="ВОДА ГАЗИРОВАННАЯ 0,5 Л/ 1Л БУТ">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">120/240₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ВОДА ГАЗИРОВАННАЯ 0,5 Л/ 1Л БУТ</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки вода негазированная 0,5 л.jpg" alt="ВОДА НЕГАЗИРОВАННАЯ 0,5 Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки вода негазированная 0,5 л.jpg" alt="ВОДА НЕГАЗИРОВАННАЯ 0,5 Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">120/240₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ВОДА НЕГАЗИРОВАННАЯ 0,5 Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки вода стекло 0,33 л.jpg" alt="ВОДА НЕГАЗИРОВАННАЯ СТЕКЛО 0,33 Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки вода стекло 0,33 л.jpg" alt="ВОДА НЕГАЗИРОВАННАЯ СТЕКЛО 0,33 Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">120₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ВОДА НЕГАЗИРОВАННАЯ СТЕКЛО 0,33 Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки добрый cola 0,5 л.jpg" alt="ДОБРЫЙ COLA 0,33Л Ж/Б 0,5 Л/1,5 Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки добрый cola 0,5 л.jpg" alt="ДОБРЫЙ COLA 0,33Л Ж/Б 0,5 Л/1,5 Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">140₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ДОБРЫЙ COLA 0,33Л Ж/Б 0,5 Л/1,5 Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Напитки добрый cola 0.3 л.jpg" alt="ДОБРЫЙ COLA 0.3 Л/1,5 Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Напитки добрый cola 0.3 л.jpg" alt="ДОБРЫЙ COLA 0.3 Л/1,5 Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">140₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ДОБРЫЙ COLA 0.3 Л/1,5 Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="напитки добрый апельсин 0,3 л.jpg" alt="ДОБРЫЙ АПЕЛЬСИН 0,3 Л/1,5 Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/напитки добрый апельсин 0,3 л.jpg" alt="ДОБРЫЙ АПЕЛЬСИН 0,3 Л/1,5 Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">140/365₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ДОБРЫЙ АПЕЛЬСИН 0,3 Л/1,5 Л</p>
                     </div>
-
+    
                     <div class="menu-item">
-                        <img src="Напитки добрый лимон - лайм  0.3 л.jpg" alt="ДОБРЫЙ ЛИМОН - ЛАЙМ 0.3 Л/1,5 Л">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <img src="../images/Напитки добрый лимон - лайм  0.3 л.jpg" alt="ДОБРЫЙ ЛИМОН - ЛАЙМ 0.3 Л/1,5 Л">
                         <div class="somme">
                             <button type="button" class="add-to-cart-btn" title="Добавить в корзину"><i
                                     class="fas fa-shopping-cart"></i></button>
                             <p class="montant">140/365₽</p>
-                            <button class="favorite-btn" title="Добавить в избранное">
-                                <i class="far fa-heart"></i>
-                            </button>
                         </div>
                         <p class="item-title">ДОБРЫЙ ЛИМОН - ЛАЙМ 0.3 Л/1,5 Л</p>
                     </div>
-
+    
                 </div>
             </div>
         </div>
     </section>
-    <!-- Fin de boisson -->
-
 
 
     <!-- les images de la gallerie -->
@@ -2009,22 +2061,22 @@
         <h3 class="category-title">Галерея</h3>
         <div class="gallery">
             <div class="gallery-item">
-                <img src="photo_2_2025-10-27_19-02-54.jpg" alt="Интерьер ресторана">
+                <img src="../images/photo_2_2025-10-27_19-02-54.jpg" alt="Интерьер ресторана">
             </div>
             <div class="gallery-item">
-                <img src="photo_3_2025-10-27_19-02-54.jpg" alt="Блюдо от шеф-повара">
+                <img src="../images/photo_3_2025-10-27_19-02-54.jpg" alt="Блюдо от шеф-повара">
             </div>
             <div class="gallery-item">
-                <img src="photo_8_2025-10-27_19-02-54.jpg" alt="Готовка на кухне">
+                <img src="../images/photo_8_2025-10-27_19-02-54.jpg" alt="Готовка на кухне">
             </div>
             <div class="gallery-item">
-                <img src="photo_7_2025-10-27_19-02-54.jpg" alt="Десерты">
+                <img src="../images/photo_7_2025-10-27_19-02-54.jpg" alt="Десерты">
             </div>
             <div class="gallery-item">
-                <img src="photo_5_2025-10-27_19-02-54.jpg" alt="Итальянская пицца">
+                <img src="../images/photo_5_2025-10-27_19-02-54.jpg" alt="Итальянская пицца">
             </div>
             <div class="gallery-item">
-                <img src="photo_1_2025-10-27_19-02-54.jpg" alt="Кофе и выпечка">
+                <img src="../images/photo_1_2025-10-27_19-02-54.jpg" alt="Кофе и выпечка">
             </div>
         </div>
     </section>
@@ -2098,14 +2150,23 @@
             <div class="product-details">
                 <div class="main-product">
                     <div class="product-image">
-                        <img id="mainProductImage" src="" alt="Product Image">
+                        <img id="mainProductImage" src="../images/" alt="Product Image">
                     </div>
                     <div class="product-info">
                         <h4 id="mainProductTitle"></h4>
                         <p class="product-price" id="mainProductPrice"></p>
-                        <button class="add-to-cart-modal" id="addToCartModal" type="button" title="Добавить в корзину">
-                            <i class="fas fa-shopping-cart"></i>
-                        </button>
+                        <div class="modal-navigation">
+                            <button class="nav-btn" id="prevBtn" title="Précédent">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="add-to-cart-modal" id="addToCartModal" type="button"
+                                title="Добавить в корзину">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                            <button class="nav-btn" id="nextBtn" title="Suivant">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="related-products">
@@ -2137,8 +2198,8 @@
         </div>
     </div>
 
-    <script src="index.js"></script>
-    <script src="neige.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/neige.js"></script>
 </body>
 
 </html>
