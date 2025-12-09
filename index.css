@@ -74,15 +74,11 @@ body {
     color: rgb(0, 170, 255);
 }
 
-.heure {
+.heure span {
     color: #ffffff;
-    font-size: 15px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    line-height: 1.2;
+    font-family: none;
+    position: relative;
+    top: 10px;
 }
 
 /* Responsive pour tablettes */
