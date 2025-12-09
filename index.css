@@ -29,42 +29,100 @@ body {
     z-index: 1000;
 } */
 
+.container-categorie {
+    width: 100%;
+    height: 80px;
+    background: #000000;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .nom-castello {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     color: rgb(0, 170, 255);
     font-size: 20px;
-    /* MODIFIER DANS RESPONSIVE */
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
-    text-align: center;
     font-family: cursive;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .logo-castello {
-    width: 80px;
-    /* MODIFIER DANS RESPONSIVE */
-    height: 80px;
-    /* MODIFIER DANS RESPONSIVE */
-    border-radius: 50%;
-    border: 2px solid rgb(255, 255, 255);
-    position: relative;
-    top: 10px;
-    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 0;
+    border: 2px solid rgba(255, 255, 255, 0);
+    object-fit: cover;
+}
+
+.nom-castello h2 {
+    margin: 0;
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: 600;
+    color: rgb(0, 170, 255);
 }
 
 .heure {
     color: #ffffff;
     font-size: 15px;
-    /* MODIFIER DANS RESPONSIVE */
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -25px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Responsive pour tablettes */
+@media (max-width: 768px) {
+    .nom-castello h2 {
+        font-size: 18px;
+    }
+
+    .logo-castello {
+        width: 40px;
+        height: 40px;
+    }
+
+    .heure {
+        font-size: 13px;
+    }
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 480px) {
+    .nom-castello h2 {
+        font-size: 16px;
+    }
+
+    .logo-castello {
+        width: 35px;
+        height: 35px;
+    }
+
+    .heure {
+        font-size: 12px;
+    }
+
+    .container-categorie {
+        padding: 0 10px;
+    }
 }
 
 .events-menu {
-    position: absolute;
-    top: 105px;
+    position: fixed;
     /* MODIFIER DANS RESPONSIVE */
     right: 25px;
     /* MODIFIER DANS RESPONSIVE */
@@ -81,6 +139,7 @@ body {
     background: rgb(117, 55, 0);
     border: 1px solid rgb(181, 147, 94);
     border-radius: 15px;
+    z-index: 1000;
 }
 
 .events-menu:hover {
@@ -107,6 +166,7 @@ body {
     background: rgb(117, 55, 0);
     border: 1px solid rgb(181, 147, 94);
     border-radius: 15px;
+    z-index: 1000;
 }
 
 .events-menu-a:hover {
@@ -124,7 +184,7 @@ body {
     /* MODIFIER DANS RESPONSIVE */
     height: 15px;
     /* MODIFIER DANS RESPONSIVE */
-    background: red;
+    background: rgb(255, 0, 0);
     color: rgb(255, 255, 255);
     font-size: 12px;
     /* MODIFIER DANS RESPONSIVE */
@@ -135,7 +195,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 1000;
 }
 
 /* ===== SECTIONS ET CATÉGORIES ===== */
@@ -166,20 +226,19 @@ section {
     font-family: 'Roboto', sans-serif;
 }
 
-.category-sold {
+/* .category-sold {
     font-size: 25px;
-    /* MODIFIER DANS RESPONSIVE */
     color: white;
     border-radius: 50px;
-    box-shadow: 0 15px 35px rgb(255, 0, 0);
+    box-shadow: 0 15px 35px rgb(66, 64, 64);
     width: auto;
     padding: 1px;
     margin-bottom: 0px;
     justify-items: center;
     text-align: center;
     z-index: 1;
-}
-/* 
+} */
+
 .barre-recherche {
     -webkit-backdrop-filter: blur(100px);
     backdrop-filter: blur(100px);
@@ -208,7 +267,7 @@ section {
     font-size: 19px;
     margin: 5px;
 }
-
+/*
 .fa-arrow-left {
     position: fixed;
     top: 3px;
@@ -240,7 +299,7 @@ section {
 } */
 
 /* ===== CAROUSEL ===== */
-.pub-carousel-section {
+.pub-carousel-section {position: relative;  top: 109px;
     max-width: 1200px;
     margin: 40px auto;
     /* MODIFIER DANS RESPONSIVE */
@@ -400,11 +459,11 @@ section {
 }
 
 .menu-item {
-    background: rgba(255, 255, 255, 0.116);
+    background:linear-gradient(rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.066));
     -webkit-backdrop-filter: blur(15px) saturate(180%);
     backdrop-filter: blur(15px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.034);
-    border-radius: 10px;
+    border: 1px solid rgba(251, 255, 0, 0.078);
+    border-radius: 5px;
     padding: 15px;
     position: relative;
     top: 70px;
@@ -563,7 +622,7 @@ footer {
 }
 
 .castello-footer {
-    background-color: var(--text-dark);
+    background-color: #000000;
     border-top: 1px solid #ff0000;
     padding: 40px 20px 20px;
     /* MODIFIER DANS RESPONSIVE */
@@ -595,7 +654,7 @@ footer {
     font-weight: bold;
     margin-bottom: 15px;
     /* MODIFIER DANS RESPONSIVE */
-    color: var(--text-light);
+    color: #ffffff;
 }
 
 .footer-column ul {
@@ -609,7 +668,7 @@ footer {
 
 .footer-column ul li a {
     text-decoration: none;
-    color: var(--text-light);
+    color: #dbdbdb;
     font-size: 14px;
     /* MODIFIER DANS RESPONSIVE */
     transition: color 0.3s;
@@ -617,6 +676,10 @@ footer {
 
 .footer-column ul li a:hover {
     color: #ffc40084;
+}
+
+.police {
+    color: #ffffff;
 }
 
 .stats-section {
@@ -643,7 +706,7 @@ footer {
     font-size: 24px;
     /* MODIFIER DANS RESPONSIVE */
     font-weight: bold;
-    color: #ffc400bf;
+    color: #308bfb;
     margin-bottom: 5px;
     /* MODIFIER DANS RESPONSIVE */
 }
@@ -651,7 +714,7 @@ footer {
 .stat-label {
     font-size: 14px;
     /* MODIFIER DANS RESPONSIVE */
-    color: var(--text-light);
+    color: #ff0000;
 }
 
 .footer-bottom {
@@ -666,7 +729,7 @@ footer {
 .company-info {
     font-size: 12px;
     /* MODIFIER DANS RESPONSIVE */
-    color: var(--text-light);
+    color: #ffffff;
     line-height: 1.5;
     margin-top: 10px;
     /* MODIFIER DANS RESPONSIVE */
