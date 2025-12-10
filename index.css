@@ -5,7 +5,7 @@
 }
 
 body {
-    background: #3b2300;
+    background: #5b3600;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -32,7 +32,7 @@ body {
 .container-categorie {
     width: 100%;
     height: 80px;
-    background: #9666004f;
+    background: rgba(0, 0, 0, 0.551);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     position: fixed;
@@ -176,7 +176,6 @@ section {
 }
 
 .menu-category {
-    margin-bottom: 150px;
     /* MODIFIER DANS RESPONSIVE */
     width: auto;
 }
@@ -189,7 +188,6 @@ section {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
     width: auto;
     padding: 1px;
-    margin-bottom: -40px;
     /* MODIFIER DANS RESPONSIVE */
     justify-items: center;
     text-align: center;
@@ -270,7 +268,9 @@ section {
 } */
 
 /* ===== CAROUSEL ===== */
-.pub-carousel-section {position: relative;  top: 109px;
+.pub-carousel-section {
+    position: relative;
+    top: 109px;
     max-width: 1200px;
     margin: 40px auto;
     /* MODIFIER DANS RESPONSIVE */
@@ -313,12 +313,14 @@ section {
     flex: 0 0 300px;
     /* MODIFIER DANS RESPONSIVE */
     height: 200px;
+    margin-bottom: 40px;
     /* MODIFIER DANS RESPONSIVE */
     border-radius: 15px;
+    background: #00000082;
     overflow: hidden;
     position: relative;
     transition: var(--transition);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(34, 29, 29, 0.219);
     will-change: transform;
 }
 
@@ -430,7 +432,7 @@ section {
 }
 
 .menu-item {
-    background:linear-gradient(rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.066));
+    background: rgba(0, 0, 0, 0.551);
     -webkit-backdrop-filter: blur(15px) saturate(180%);
     backdrop-filter: blur(15px) saturate(180%);
     border: 1px solid rgba(251, 255, 0, 0.078);
@@ -539,7 +541,7 @@ section {
     right: 25px;
     width: 40px;
     height: 30px;
-    background: #ffffff;
+    background: #ffffffdf;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -561,13 +563,17 @@ section {
     display: flex;
     flex-direction: row;
     position: relative;
-    top: 5px;
+    top: 0;
     gap: 10px;
 }
 
 .fa-wallet,
 .montant {
-    color: #d5c300;
+    color: #000000;
+    padding: 1px 10px;
+    border-bottom: 2px solid #ffffff;
+    border-radius: 20px;
+    background-color: #d5a700c8;
     font-size: 16px;
     font-weight: bold;
 }
@@ -598,7 +604,7 @@ footer {
     padding: 40px 20px 20px;
     /* MODIFIER DANS RESPONSIVE */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto;margin: -10px;
 }
 
 .footer-top {
