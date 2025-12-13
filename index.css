@@ -22,7 +22,8 @@ body {
 header {
     position: relative;
     color: rgb(255, 255, 255);
-    font-family: italic;
+    font-style: italic;
+    font-family: cursive;
     margin: 0;
     padding: 1.5rem 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.564);
