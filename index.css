@@ -20,11 +20,24 @@ body {
 }
 
 header {
-    background: #00000073;
+    background-image: url(4.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
+    margin: 0;
     padding: 1.5rem 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.564);
 }
+
+/* .fond {
+    margin: 0;
+    backdrop-filter: blur(5px);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        fit
+} */
 
 .heure {
     color: #ffffff;
