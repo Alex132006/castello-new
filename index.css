@@ -23,26 +23,10 @@ header {
     background: #00000073;
         color: white;
         padding: 1.5rem 0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.564);
 }
 
-.logo-castello {
-    width: 50px;
-    height: 50px;
-    border-radius: 0;
-    border: 2px solid rgba(255, 255, 255, 0);
-    object-fit: cover;
-}
-
-.nom-castello h2 {
-    margin: 0;
-    font-size: 20px;
-    font-family: cursive;
-    font-weight: 600;
-    color: rgb(0, 170, 255);
-}
-
-.heure span {
+.heure {
     color: #ffffff;
     font-family: none;
     position: relative;
@@ -126,20 +110,7 @@ nav {
 .events-menu:hover {
     border: 1px solid rgb(253, 253, 253);
     padding: 1px;
-}
-
-.events-menu-a {
-    text-align: center;
-    color: #ffffff;
-    background: rgb(117, 55, 0);
-    border: 1px solid rgb(181, 147, 94);
-    border-radius: 15px;
-    z-index: 1000;
-}
-
-.events-menu-a:hover {
-    border: 1px solid rgb(253, 253, 253);
-    padding: 11px;
+    background: rgb(56, 26, 0);
 }
 
 /* .signal {
@@ -185,48 +156,6 @@ section {
     text-align: center;
     z-index: 1;
     font-family: 'Roboto', sans-serif;
-}
-
-/* .category-sold {
-    font-size: 25px;
-    color: white;
-    border-radius: 50px;
-    box-shadow: 0 15px 35px rgb(66, 64, 64);
-    width: auto;
-    padding: 1px;
-    margin-bottom: 0px;
-    justify-items: center;
-    text-align: center;
-    z-index: 1;
-} */
-
-.barre-recherche {
-    -webkit-backdrop-filter: blur(100px);
-    backdrop-filter: blur(100px);
-    background: #0071007f;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 10%;
-    z-index: 1;
-}
-
-.recherche {
-    padding: 5px 5px;
-    background: #ffffff50;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-}
-
-.fa-magnifying-glass {
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 19px;
-    margin: 5px;
 }
 
 /* ===== CAROUSEL ===== */
