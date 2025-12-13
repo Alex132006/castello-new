@@ -13,17 +13,17 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.container-premier{
+.container-premier {
     max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 header {
     background: #00000073;
-        color: white;
-        padding: 1.5rem 0;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.564);
+    color: white;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.564);
 }
 
 .heure {
@@ -357,7 +357,7 @@ section {
 
 .menu-item:hover {
     border-left: 1px solid #ffe600;
-        border-bottom: 3px solid #ffe600;
+    border-bottom: 3px solid #ffe600;
     box-shadow: 0 8px 30px rgba(255, 255, 255, 0.09);
     transform: translateY(-5px) scale(1.02);
 }
@@ -495,7 +495,8 @@ footer {
     padding: 40px 20px 20px;
     /* MODIFIER DANS RESPONSIVE */
     max-width: 1200px;
-    margin: 0 auto;margin: -10px;
+    margin: 0 auto;
+    margin: -10px;
 }
 
 .footer-top {
