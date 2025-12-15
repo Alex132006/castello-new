@@ -57,6 +57,8 @@ header::before {
 .heure {
     color: #ffffff;
     font-family: none;
+    font-weight: bold;
+    font-size: 20px;
     position: relative;
     top: 10px;
 }
