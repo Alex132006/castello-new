@@ -193,7 +193,7 @@ section {
     position: relative;
     top: 109px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: -20px auto;
     /* MODIFIER DANS RESPONSIVE */
     padding: 0 20px;
     /* MODIFIER DANS RESPONSIVE */
@@ -1430,6 +1430,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     padding: 20px 15px;
+    margin: 120px auto;
 }
 
 .gallery-item {
