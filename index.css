@@ -162,6 +162,20 @@ nav {
     z-index: 1000;
 } */
 
+.social {
+    position: relative;
+    top: -5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tiktok,
+.whatsapp,
+.appel {
+    height: 30px;
+    
+}
+
 /* ===== SECTIONS ET CATÉGORIES ===== */
 section {
     padding: 10px;
