@@ -37,7 +37,7 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(4.jpg);
+    background-image: url(merry.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -143,10 +143,10 @@ nav {
     background: rgb(56, 26, 0);
 }
 
-/* .signal {
+.signal {
     position: absolute;
-    top: 60px;
-    right: 90px;
+    top: 15px;
+    left: 60px;
     width: 15px;
     height: 15px;
     background: rgb(255, 0, 0);
@@ -159,8 +159,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
-} */
+    z-index: 10000;
+}
 
 .social {
     position: relative;
@@ -173,7 +173,16 @@ nav {
 .whatsapp,
 .appel {
     height: 30px;
-    
+}
+
+.event-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.section-title {
+    color: #ffffff;
 }
 
 /* ===== SECTIONS ET CATÉGORIES ===== */
@@ -251,7 +260,7 @@ section {
     margin-bottom: 40px;
     /* MODIFIER DANS RESPONSIVE */
     border-radius: 15px;
-    background: #00000082;
+    background: #00000013;
     overflow: hidden;
     position: relative;
     transition: var(--transition);
