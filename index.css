@@ -144,9 +144,7 @@ nav {
 }
 
 .signal {
-    position: fixed;
-    top: 15px;
-    left: 60px;
+    margin-left: -25px;
     width: 15px;
     height: 15px;
     background: rgb(255, 0, 0);
