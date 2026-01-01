@@ -37,12 +37,34 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(image\ copy\ 3.png);
+    background-image: url(image\ copy\ 2.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    filter: blur(0px);
+    filter: blur(1px);
     z-index: -1;
+}
+
+@keyframes body {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }
 
 /* .fond {
