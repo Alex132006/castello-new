@@ -483,7 +483,7 @@ body {
     padding: 8px;
 }
 
-.btn {
+/* .btn {
     position: relative;
     top: 0;
     right: -180px;
@@ -504,8 +504,8 @@ body {
 
 .btn:hover {
     background: rgba(255, 255, 255, 0.742);
-    transform: translateY(-3.5px) scale(1.2);
-}
+    transform: translateY(-1px) scale(1.2);
+} */
 
 .add-to-cart-btn {
     position: fixed;
@@ -528,7 +528,7 @@ body {
 
 .add-to-cart-btn:hover {
     background: rgba(255, 255, 255, 0.742);
-    transform: translateY(-4px) scale(1.2);
+    transform: translateY(-1px);
 }
 
 .somme {
