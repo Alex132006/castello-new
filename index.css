@@ -37,7 +37,7 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(image\ copy\ 2.png);
+    background-image: url(castello.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -94,6 +94,7 @@ header::before {
     .logo-castello {
         width: 40px;
         height: 40px;
+        padding-left: 90%;
     }
 
     .heure {
@@ -110,6 +111,7 @@ header::before {
     .logo-castello {
         width: 35px;
         height: 35px;
+        padding-left: 80%;
     }
 
     .heure {
@@ -1021,6 +1023,7 @@ footer {
     .logo-castello {
         width: 70px;
         height: 70px;
+        padding-left: 95%;
     }
 
     .heure {
