@@ -204,7 +204,7 @@ nav {
 }
 
 .section-title {
-    color: #000000;
+    color: #ffffff;
 }
 
 /* ===== SECTIONS ET CATÉGORIES ===== */
@@ -221,7 +221,7 @@ section {
 .category-title {
     font-size: 25px;
     /* MODIFIER DANS RESPONSIVE */
-    color: #000000;
+    color: #ffffff;
     border-bottom: 1px solid #dcb40088;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
     width: auto;
