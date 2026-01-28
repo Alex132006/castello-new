@@ -28,6 +28,7 @@ header {
     padding: 1.5rem 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.564);
     overflow: hidden;
+    height: 500px;
 }
 
 header::before {
@@ -37,7 +38,8 @@ header::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(castello.jpg);
+    backdrop-filter: blur ;
+    background-image: url(photo_2_2025-10-27_19-02-54.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -173,6 +175,7 @@ nav {
     border-radius: 15px 15px;
     font-weight: 400;
     letter-spacing: 0.3px;
+    margin-top: -40px;
 }
 
 .events-menu:hover {
