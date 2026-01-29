@@ -1,0 +1,251 @@
+/* Conteneur principal du diaporama */
+.promo-rotation-container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Piste des slides */
+.promotion-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 500px;
+}
+
+/* Style des slides individuelles */
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay pour améliorer la lisibilité du texte */
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Contenu de chaque slide */
+.promotion-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 40px;
+    max-width: 600px;
+}
+
+.promotion-header {
+    margin-bottom: 20px;
+}
+
+.promotion-header h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.promotion-description {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.promotion-description span {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.promotion-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.promotion-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.action-primary {
+    background-color: #ff5722;
+    color: white;
+}
+
+.action-primary:hover {
+    background-color: #e64a19;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.action-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.action-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Indicateurs de navigation */
+.promotion-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    gap: 10px;
+}
+
+.indicator-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator-dot.active-dot {
+    background-color: #ff5722;
+}
+
+/* Boutons de navigation */
+.promotion-navigation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 3;
+}
+
+.navigation-arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.navigation-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicateur de position */
+.promotion-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .promotion-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .promotion-description {
+        font-size: 1.5rem;
+    }
+
+    .promotion-description span {
+        font-size: 1.8rem;
+    }
+
+    .promotion-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .promotion-track {
+        height: 400px;
+    }
+
+    .promotion-actions {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promotion-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .promotion-description {
+        font-size: 1.3rem;
+    }
+
+    .promotion-content {
+        padding: 20px;
+    }
+
+    .promotion-btn {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .promotion-track {
+        height: 350px;
+    }
+
+    .navigation-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .promotion-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}
