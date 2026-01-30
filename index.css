@@ -19,7 +19,7 @@
     --spacing-xs: 0.5rem;
 }
 
-header {
+heaer {
     position: relative;
     color: rgb(255, 255, 255);
     font-style: italic;
@@ -236,13 +236,15 @@ nav {
 
 /* ===== SECTIONS ET CATÉGORIES ===== */
 section {
-    padding: 10px;
+    padding: 0px;
     margin: auto;
 }
 
 .menu-category {
     /* MODIFIER DANS RESPONSIVE */
     width: auto;
+    position: relative;
+    top: 350px;
 }
 
 .category-title {
@@ -253,6 +255,7 @@ section {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
     width: auto;
     padding: 1px;
+    
     /* MODIFIER DANS RESPONSIVE */
     justify-items: center;
     text-align: center;
@@ -263,7 +266,7 @@ section {
 /* ===== CAROUSEL ===== */
 .pub-carousel-section {
     position: relative;
-    top: 109px;
+    top: 500px;
     max-width: 1200px;
     margin: -20px auto;
     /* MODIFIER DANS RESPONSIVE */
