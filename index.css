@@ -39,7 +39,7 @@ header::before {
     right: 0;
     bottom: 0;
     filter: blur(2px);
-    background-image: url(photo_2_2025-10-27_19-02-54.jpg);
+    background-image: url(image\ copy\ 5.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -82,7 +82,7 @@ header::before {
     width: 40px;
     height: 40px;
     padding-left: 90%;
-    position: fixed;
+    position: relative;
 }
 
 .heure {
