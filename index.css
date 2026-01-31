@@ -137,6 +137,16 @@ header::before {
     }
 }
 
+.classee {
+    position: relative;
+    top: 300px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
 .place {
     position: relative;
     top: 100px;
@@ -223,7 +233,7 @@ nav {
 .tiktok,
 .whatsapp,
 .appel {
-    height: 30px;
+    height: 40px;
 }
 
 .event-img {
