@@ -25,7 +25,6 @@ window.addEventListener("load", function () {
             align-items: center;
             z-index: 9999;
             color: white;
-            font-family: 'Playfair Display', Georgia, serif;
             text-align: center;
         `;
     document.body.appendChild(loadingScreen);
