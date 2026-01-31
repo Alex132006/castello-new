@@ -124,7 +124,7 @@ header::before {
 .classee {
     position: fixed;
     top: 35px;
-    left: 350px;
+    left: 330px;
     display: flex;
     justify-content: center;
     align-items: center;
