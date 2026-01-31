@@ -78,11 +78,13 @@ header::before {
         fit
 } */
 
-.logo-castello {
-    width: 40px;
-    height: 40px;
-    padding-left: 90%;
+.logo {
+    width: 50px;
+    height: 80px;
+    /* padding-left: 90%; */
     position: fixed;
+    top: 20px;
+    left: 15px;
 }
 
 .heure {
@@ -214,6 +216,21 @@ nav {
 .events-men {
     background: #ffffff00;
     color: #00000000;
+}
+
+.events {
+    /* text-decoration: none; */
+    cursor: pointer;
+    background: #00000000;
+    color: #ffffff;
+    position: fixed;
+    left: 355px;
+    top: 40px;
+}
+
+.events:hover {
+    color: #ffffff;
+    background: rgb(0, 0, 0);
 }
 
 .events-menu {
@@ -1093,7 +1110,7 @@ footer {
         width: 70px;
         height: 70px;
         padding-left: 95%;
-        top: 30px;
+        top: 0px;
         right: 50px;
     }
 
@@ -1225,7 +1242,7 @@ footer {
     .logo-castello {
         width: 75px;
         height: 75px;
-        top: 15px;
+        top: 0px;
         left: -35px;
     }
 
@@ -1385,7 +1402,7 @@ footer {
     .logo-castello {
         width: 60px;
         height: 60px;
-        top: 10px;
+        top: 0px;
         left: 10px;
     }
 
