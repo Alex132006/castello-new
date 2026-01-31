@@ -1575,6 +1575,8 @@ footer {
     gap: 15px;
     padding: 20px 15px;
     margin: 120px auto;
+    position: relative;
+    top: 350px;
 }
 
 .gallery-item {
