@@ -111,16 +111,65 @@
         line-height: 1.2;
         letter-spacing: 0.3px;
     }
+
+    @media (max-width: 768px) {
+    .dan {
+        bottom: 20px;
+        padding: 6px 15px;
+        max-width: 95%;
+    }
+    
+    .nav-item {
+        min-width: 50px;
+        padding: 6px 8px;
+    }
+    
+    .nav-item i {
+        font-size: 18px;
+    }
+    
+    .nav-item span {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dan {
+        bottom: 15px;
+        padding: 5px 10px;
+    }
+    
+    .nav-item {
+        min-width: 45px;
+        padding: 5px 6px;
+    }
+    
+    .nav-item i {
+        font-size: 16px;
+    }
+    
+    .nav-item span {
+        font-size: 9px;
+    }
+}
 </style>
 
 <body style="background-color: rgb(234, 159, 11);">
+
+    <!-- Cart Button -->
+    <div id="cart-button" class="cart-button">
+        <button class="cart-toggle" id="cartBtn">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </button>
+    </div>
 
     <!-- Navigation -->
     <nav><div class="logo">
         <img src="image copy.png" class="logo" alt="Логотип Кастелло Пан Африка" class="events-men" id="choix"  name="section" aria-label="Выберите раздел меню"></img>
     </div>
-        <div class="nom">
-                <a href="pannier.html" class="events"><i class="fas fa-shopping-cart"></i></a>
+        <div id="cart-button" class="cart-button">
+                <a href="pannier.html" class="events"><i class="fas events fa-shopping-cart"></i></a>
         </div>
             <!-- <h3 class="heure">Castello</h3> -->
             <h1 class="heure" style=" font-size: 35px; ">Castello</h1>
@@ -474,6 +523,60 @@
 
     </section> -->
     <!-- fin de la gallerie -->
+
+    <!-- Добавьте эту кнопку для быстрого возврата наверх -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <style>
+        .back-to-top {
+            position: fixed;
+            bottom: 120px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+    
+        .back-to-top:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+    
+        .back-to-top i {
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+    
+    <script>
+        // Скрипт для кнопки "Наверх"
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 300) {
+                    backToTopBtn.style.display = 'block';
+                } else {
+                    backToTopBtn.style.display = 'none';
+                }
+            });
+
+            backToTopBtn.addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
 
     <!-- Breakfast Section -->
     <section id="dejeuner">
@@ -2786,7 +2889,6 @@
         </div>
     </div>
 
-    <!-- Cart Button -->
     <div id="cart-button" class="cart-button">
         <button class="cart-toggle" id="cartBtn">
             <i class="fas fa-shopping-cart"></i>
@@ -2794,19 +2896,77 @@
         </button>
     </div>
 
-    <!-- Cookie Consent Banner -->
-    <!-- <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-content">
-            <p>Этот сайт использует файлы cookie для улучшения вашего опыта. Продолжая использовать сайт, вы
-                соглашаетесь с использованием cookie.</p>
-            <div class="cookie-buttons">
-                <button id="accept-cookies" class="cookie-btn accept">Принять</button>
-                <button id="decline-cookies" class="cookie-btn decline">Отклонить</button>
-            </div>
-        </div>
-    </div> -->
+    <!-- Добавьте этот код перед закрывающим тегом </body> -->
+    <div class="dan" style="left: 50%; transform: translateX(-50%);">
+        <a href="#" class="nav-item active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Главная</span>
+        </a>
+        <!-- <a href="#sold" class="nav-item" data-section="sold">
+            <i class="fas fa-percent"></i>
+            <span>Акции</span>
+        </a> -->
+        <a href="#dejeuner" class="nav-item" data-section="plats">
+            <i class="fas fa-utensils"></i>
+            <span>Меню</span>
+        </a>
+        <a href="#gallery" class="nav-item" data-section="gallery">
+            <i class="fas fa-images"></i>
+            <span>Галерея</span>
+        </a>
+        <a href="pannier.html" class="nav-item cart-nav-item" data-section="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Корзина</span>
+            <span id="cart-count" class="cart-counter">0</span>
+        </a>
+    </div>
 
-    <script src="index.js"></script>
+
+    <script src="index.js">
+         // Скрипт для обновления счетчика корзины
+            document.addEventListener('DOMContentLoaded', function () {
+                function updateCartCounter() {
+                    // Получаем корзину из localStorage
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Подсчитываем общее количество товаров
+                    let totalCount = 0;
+                    cart.forEach(item => {
+                        totalCount += item.quantity || 1;
+                    });
+
+                    // Обновляем счетчик
+                    const cartCounter = document.getElementById('cart-count');
+                    if (cartCounter) {
+                        cartCounter.textContent = totalCount;
+
+                        // Показываем/скрываем счетчик
+                        if (totalCount > 0) {
+                            cartCounter.style.display = 'flex';
+                        } else {
+                            cartCounter.style.display = 'none';
+                        }
+                    }
+                }
+
+                // Обновляем счетчик при загрузке
+                updateCartCounter();
+
+                // Обновляем счетчик при изменениях в корзине
+                window.addEventListener('storage', function (e) {
+                    if (e.key === 'cart') {
+                        updateCartCounter();
+                    }
+                });
+
+                // Также обновляем при добавлении товаров (если на этой же странице)
+                document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+                    button.addEventListener('click', function () {
+                        setTimeout(updateCartCounter, 100);
+                    });
+                });
+            });
+    </script>
     <script src="neige.js"></script>
     <script src="rentable.js"></script>
 </body>

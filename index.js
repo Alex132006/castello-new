@@ -215,8 +215,8 @@ function addToCart(name, price, quantity = 1, image) {
 
     return true;
   } catch (error) {
-    console.error("Ошибка при добавлении в корзину:", error);
-    showNotification("Ошибка при добавлении товара", "error");
+    console.error("Ошибка:", error);
+    showNotification("Ошибка ", "error");
     return false;
   }
 }
@@ -295,7 +295,7 @@ function addToFavorites(name, price, image) {
     });
 
     updateFavorites();
-    showNotification(`${normalizedName} добавлен в избранное`);
+    showNotification(`${normalizedName} ✓`);
     return true;
   }
   return false;
@@ -602,7 +602,7 @@ function initializeModals() {
         document.body.style.overflow = "";
 
         // Анимация кнопки
-        this.innerHTML = '<i class="fas fa-check"></i> Добавлено!';
+        this.innerHTML = '<i class="fas fa-check"></i> ✓!';
         this.style.background =
           "linear-gradient(135deg, hsla(120, 59%, 50%, 0.8), hsla(120, 59%, 40%, 0.8))";
 

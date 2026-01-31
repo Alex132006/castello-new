@@ -6,7 +6,6 @@
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0);
-    /* position: relative; */
     top: 150px;
 }
 
@@ -31,22 +30,11 @@
 }
 
 .slide {
-    /* content: ''; */
-        /* position: absolute; */
         top: 0;
-        /* left: 0; */
         right: 0;
         bottom: 0;
-        /* filter: blur(2px); */
-        /* background-image: url("https: //images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"); */
-        /* background-size: cover; */
-        /* background-position: center; */
-        /* background-repeat: no-repeat; */
-        /* filter: blur(px); */
-        /* z-index: -1; */
 }
 
-/* Overlay pour améliorer la lisibilité du texte */
 .slide::before {
     content: '';
     position: absolute;
@@ -58,7 +46,6 @@
     z-index: 1;
 }
 
-/* Contenu de chaque slide */
 .promotion-content {
     position: relative;
     z-index: 2;
@@ -136,7 +123,6 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Indicateurs de navigation */
 .promotion-indicators {
     position: absolute;
     bottom: 20px;
@@ -161,7 +147,6 @@
     background-color: #ff5722;
 }
 
-/* Boutons de navigation */
 .promotion-navigation {
     position: absolute;
     top: 50%;
@@ -192,7 +177,6 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Indicateur de position */
 .promotion-counter {
     position: absolute;
     top: 20px;

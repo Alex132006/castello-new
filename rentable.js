@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Action pour les boutons "в корзину"
   document.querySelectorAll(".action-secondary").forEach((button) => {
     button.addEventListener("click", function () {
-      alert("Товар добавлен в корзину!");
+      alert("✓");
     });
   });
 });
