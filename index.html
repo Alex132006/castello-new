@@ -2818,40 +2818,79 @@
     <div id="eventsModal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            
+
             <div class="event-container">
-            <h2 class="section-title" style="color: rgb(255, 255, 255); text-align: center;">Наши Событий.</h2>
-
-            <div class="events-modal">
-                <button class="events-menu" id="photo">Фото</button>
-                <button class="events-menu" id="recettte">рецепт</button>
-                <button class="events-menu" id="video">Видео</button>
+                <h2 class="section-title" style="color: rgb(255, 255, 255); text-align: center;">Наши События</h2>
+            
+                <div class="events-modal">
+                    <button class="events-menu" data-target="photo">Фото</button>
+                    <button class="events-menu" data-target="recipe">Рецепты</button>
+                    <button class="events-menu" data-target="video">Видео</button>
+                </div>
             </div>
+            
+            <div id="photo" class="event-section active">
+                <div class="events-list">
+                    <img src="Акция по понедельникам.jpg" class="event-img" alt="Акция по понедельникам">
+                </div>
+
+                <div class="events-list">
+                    <img src="Акция по понедельникам.jpg" class="event-img" alt="Акция по понедельникам">
+                </div>
+            
+                <div class="events-list">
+                    <img src="Акция по вторникам и четвергам А3 размер.jpg" class="event-img" alt="Акция по вторникам и четвергам">
+                </div>
+            
+                <div class="events-list">
+                    <img src="блины Акция .jpg" class="event-img" alt="Акция блины">
+                </div>
             </div>
-
-            <div>
+            
+            <div id="recipe" class="event-section">
                 <div class="events-list">
-                    <!-- Events content here -->
-                    <img src="Акция по понедельникам.jpg" class="event-img" alt="">
+                    <div class="recipe-content">
+                        <!-- Контент рецепта здесь -->
+                        <h3>Название рецепта 1</h3>
+                        <p>Описание рецепта...</p>
+                    </div>
                 </div>
-
+            
                 <div class="events-list">
-                    <!-- Events content here -->
-                    <img src="Акция по вторникам и четвергам А3 размер.jpg" class="event-img" alt="">
+                    <div class="recipe-content">
+                        <h3>Название рецепта 2</h3>
+                        <p>Описание рецепта...</p>
+                    </div>
                 </div>
-
+            
                 <div class="events-list">
-                    <!-- Events content here -->
-                    <img src="блины Акция .jpg" class="event-img" alt="">
+                    <div class="recipe-content">
+                        <h3>Название рецепта 3</h3>
+                        <p>Описание рецепта...</p>
+                    </div>
                 </div>
-
+            </div>
+            
+            <div id="video" class="event-section">
                 <div class="events-list">
-                    <!-- Events content here -->
-                    <img src="Акция выходные блины А3 переделано.jpg" class="event-img" alt="">
+                    <video controls class="event-video">
+                        <source src="video1.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
                 </div>
-
+            
                 <div class="events-list">
-                    <!-- <img src="" class="event-img" alt=""> -->
+                    <video controls class="event-video">
+                        <source src="video2.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            
+                <div class="events-list">
+                    <video controls class="event-video">
+                        <source src="video3.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
                 </div>
             </div>
 

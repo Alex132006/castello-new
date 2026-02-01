@@ -1101,3 +1101,23 @@ window.CastelloPanAfrica = {
   openProductModal,
   toggleCart,
 };
+
+
+document.querySelectorAll(".events-menu").forEach((button) => {
+  button.addEventListener("click", () => {
+    // Désactiver toutes les sections
+    document.querySelectorAll(".event-section").forEach((section) => {
+      section.classList.remove("active");
+    });
+
+    // Désactiver tous les boutons
+    document.querySelectorAll(".events-menu").forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    // Activer la section cible
+    const targetId = button.getAttribute("data-target");
+    document.getElementById(targetId).classList.add("active");
+    button.classList.add("active");
+  });
+});

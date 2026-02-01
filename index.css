@@ -228,6 +228,7 @@ nav {
     font-weight: 400;
     letter-spacing: 0.3px;
     margin-top: -40px;
+    cursor: pointer;
 }
 
 .events-menu:hover {
@@ -265,8 +266,24 @@ nav {
     height: 40px;
 }
 
+.event-section {
+    display: none;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.event-section.active {
+    display: block;
+}
+
+.events-menu.active {
+    background-color: #028108;
+    color: white;
+}
+
 .event-container {
-    background: #0000004b;
+    background: #00000070;
     border-radius: 10px;
     backdrop-filter: blur (50px);
 }
