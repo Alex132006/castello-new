@@ -7,8 +7,8 @@ window.addEventListener("load", function () {
     loadingScreen.id = "loading-screen";
     loadingScreen.innerHTML = `
             <div class="loading-content">
-                <img src="image copy.png" alt="Логотип Кафе Кастелло Пан Африка" 
-                     class="loading-logo" 
+                <img src="image copy.png" alt="Логотип Кафе Кастелло Пан Африка"
+                     class="loading-logo"
                      onload="this.style.opacity = '1'">
                 <div class="loading-text">
                     <h2>добро пожаловать</h2>
