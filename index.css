@@ -130,7 +130,7 @@ header::before {
 .classee {
     position: fixed;
     top: 40px;
-    left: 370px;
+    left: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
