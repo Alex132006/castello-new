@@ -211,7 +211,7 @@ function addToCart(name, price, quantity = 1, image) {
     updateCartDisplay();
 
     // Уведомление
-    showNotification(`${normalizedName} добавлен в корзину!`);
+    showNotification(`${normalizedName} добавлен!`);
 
     return true;
   } catch (error) {
@@ -382,7 +382,7 @@ function initializeAddToCartButtons() {
       if (addToCart(name, price, 1, image)) {
         // Анимация подтверждения
         const originalHTML = this.innerHTML;
-        this.innerHTML = "✓ Добавлено";
+        this.innerHTML = "✓";
         this.style.background =
           "linear-gradient(135deg, hsla(120, 59%, 50%, 0.8), hsla(120, 59%, 40%, 0.8))";
 
