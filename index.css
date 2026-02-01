@@ -1,9 +1,9 @@
 * {
-    /* margin: 0; */
+    margin: 0;
     padding: 0;
-    font-family: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
 /* Reset & Variables */
 :root {
     --primary-color: #c41e3a;
@@ -84,7 +84,7 @@ header::before {
     font-size: 50px;
     text-align: center;
     position: relative;
-    top: 10px;
+    top: -20px;
     display: flex;
     justify-content: center;
 }
@@ -129,8 +129,8 @@ header::before {
 
 .classee {
     position: fixed;
-    top: 35px;
-    left: 330px;
+    top: 40px;
+    left: 370px;
     display: flex;
     justify-content: center;
     align-items: center;
