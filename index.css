@@ -266,6 +266,21 @@ nav {
     height: 40px;
 }
 
+.burger {
+    position: relative;
+    top: 170px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.fa-burger {
+    color: #dfad0a40;
+    font-size: 100px;
+    position: relative;
+    top: -40px;
+    left: 300px;
+}
+
 /* .events-list {} */
 
 .event-video {
