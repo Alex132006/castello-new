@@ -389,7 +389,7 @@ function initializeAddToCartButtons() {
         setTimeout(() => {
           this.innerHTML = originalHTML;
           this.style.background =
-            "linear-gradient(135deg, hsla(62, 59%, 40%, 0.70), hsla(61, 62%, 62%, 0.70))";
+            "linear-gradient(135deg, hsla(0, 0%, 0%, 0.70), hsla(0, 0%, 0%, 0.70))";
         }, 1500);
       }
     });
