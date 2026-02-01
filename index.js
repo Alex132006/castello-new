@@ -384,7 +384,7 @@ function initializeAddToCartButtons() {
         const originalHTML = this.innerHTML;
         this.innerHTML = "✓";
         this.style.background =
-          "linear-gradient(135deg, hsla(120, 59%, 50%, 0.8), hsla(120, 59%, 40%, 0.8))";
+          "linear-gradient(135deg, hsla(0, 0%, 0%, 0.80), hsla(0, 0%, 0%, 0.80))";
 
         setTimeout(() => {
           this.innerHTML = originalHTML;
