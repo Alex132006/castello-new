@@ -1469,9 +1469,10 @@ footer {
     }
 
     .add-to-cart-btn {
-        top: 220px;
+        top: 240px;
         right: 15px;
         font-size: 16px;
+    border-radius: 30px;
     }
 
     .item-title {
