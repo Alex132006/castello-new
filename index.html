@@ -582,60 +582,7 @@
     </section> -->
     <!-- fin de la gallerie -->
 
-    <!-- Добавьте эту кнопку для быстрого возврата наверх -->
-    <button id="backToTop" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
     
-    <style>
-        .back-to-top {
-            position: fixed;
-            bottom: 120px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            display: none;
-            z-index: 999;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-    
-        .back-to-top:hover {
-            background: white;
-            transform: translateY(-3px);
-        }
-    
-        .back-to-top i {
-            font-size: 20px;
-            color: #333;
-        }
-    </style>
-    
-    <script>
-        // Скрипт для кнопки "Наверх"
-        const backToTopBtn = document.getElementById('backToTop');
-        if (backToTopBtn) {
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 300) {
-                    backToTopBtn.style.display = 'block';
-                } else {
-                    backToTopBtn.style.display = 'none';
-                }
-            });
-
-            backToTopBtn.addEventListener('click', function () {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        }
-    </script>
-
     <!-- Breakfast Section -->
     <section id="dejeuner">
         <div class="container">
