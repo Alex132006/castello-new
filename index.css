@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 /* Reset & Variables */
 :root {
     --primary-color: #c41e3a;
@@ -741,30 +742,27 @@ footer {
     z-index: 1000;
 }
 
-.cart-toggle {
-    /* background: linear-gradient(135deg, #442d0af9 0%, #d4af37f2 100%); */
-    /* border: none; */
-    /* border-radius: 50%; */
-    /* width: 0px; */
-    /* MODIFIER DANS RESPONSIVE */
-    /* height: 80px; */
-    /* MODIFIER DANS RESPONSIVE */
-    /* cursor: pointer; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* color: #ffffff; */
-    /* font-size: 1.5rem; */
-    /* MODIFIER DANS RESPONSIVE */
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0); */
-    /* transition: all 0.3s ease; */
-    /* z-index: 10000; */
+/* .cart-toggle {
+    background: linear-gradient(135deg, #ff000000 0%, #d4af37f2 100%);
+    border: none;
+    border-radius: 50%;
+    width: 0px;
+    height: 80px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+    z-index: 10000;
 }
 
 .cart-toggle:hover {
-    /* transform: scale(1.1); */
-    /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); */
-}
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+} */
 
 #cart-count {
     position: relative;
