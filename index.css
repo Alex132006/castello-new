@@ -266,6 +266,11 @@ nav {
     height: 40px;
 }
 
+.event-video {
+    width: 100%;
+    height: 100%;
+}
+
 .event-section {
     display: none;
     justify-content: center;
