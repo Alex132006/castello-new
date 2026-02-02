@@ -1205,10 +1205,15 @@ footer {
         right: 50px;
     }
 
+    .pan-africa {
+        position: relative;
+        top: 1px;
+    }
+
     .heure {
         font-size: 16px;
         position: relative;
-        top: 0px;
+        top: 5px;
     }
 
         /* Styles pour PC seulement (desktop) */
@@ -1238,6 +1243,11 @@ footer {
         right: 35px;
         width: 85px;
         height: 28px;
+    }
+
+    .tiktok {
+        position: relative;
+        left: 400px;
     }
 
     .signal {
@@ -1394,13 +1404,18 @@ footer {
 
     .heure {
         font-size: 18px;
-        top: 70px;
+        top: 40px;
         margin-top: -30px;
+    }
+
+    .tiktok {
+        position: relative;
+        left: 600px;
     }
 
     .pan-africa {
         position: relative;
-        top: 10px;
+        top: 30px;
         color: #eda200;
     }
 
