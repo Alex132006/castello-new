@@ -1416,15 +1416,15 @@ footer {
             transform: translateY(-2px);
         }
     
-        .events-menu {
-            /* padding: 10px 15px; */
-            /* background: #4a5568; */
-            /* color: white; */
-            /* border: none; */
-            /* border-radius: 50%; */
-            /* cursor: pointer; */
-            /* font-size: 16px; */
-        }
+        /* .events-menu {
+            padding: 10px 15px;
+            background: #4a5568;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+        } */
 
     .heure {
         font-size: 18px;
