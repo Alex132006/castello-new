@@ -128,6 +128,14 @@ header::before {
     }
 }
 
+.pan-africa {
+color: rgb(234, 153, 11);
+font-weight: bolder;
+position: relative;
+top: -33px;
+text-align: center;
+}
+
 .classee {
     position: fixed;
     top: 40px;
@@ -1162,6 +1170,8 @@ footer {
 
     .heure {
         font-size: 16px;
+        position: relative;
+        top: 0px;
     }
 
     .events-menu {
@@ -1296,6 +1306,12 @@ footer {
         font-size: 18px;
         top: 70px;
         margin-top: -30px;
+    }
+
+    .pan-africa {
+        position: relative;
+        top: 10px;
+        color: #eda200;
     }
 
     .events-menu {
