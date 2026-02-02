@@ -294,6 +294,10 @@ nav {
     color: #ffffff;
 }
 
+.event-section, h1 {
+    color: #ffffff;
+}
+
 .event-section {
     display: none;
     justify-content: center;
