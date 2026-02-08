@@ -140,7 +140,7 @@ av {
     display: flex;
     align-items: center;
     padding: 20px;
-    border-bottom: 1px solid #faff69b3;
+    border-bottom: 1px solid #faff69b3; 
     transition: all 0.3s ease;
     gap: 15px;
 }
