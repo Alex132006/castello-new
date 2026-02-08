@@ -1,6 +1,3 @@
-// =============================================
-// LOADING SCREEN - Экран загрузки (показывается один раз)
-// =============================================
 window.addEventListener("load", function () {
   if (!localStorage.getItem("hasSeenLoading")) {
     const loadingScreen = document.createElement("div");
@@ -84,17 +81,10 @@ window.addEventListener("load", function () {
   }
 });
 
-// =============================================
-// GLOBAL VARIABLES - Глобальные переменные
-// =============================================
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 let favoritesCache = null;
 let isFavoriteCache = new Map();
-
-// =============================================
-// UTILITY FUNCTIONS - Вспомогательные функции
-// =============================================
 
 // Дебаунс для оптимизации производительности
 function debounce(func, wait) {
@@ -160,9 +150,6 @@ function showNotification(message, type = "success") {
   }, 3000);
 }
 
-// =============================================
-// CART MANAGEMENT - Управление корзиной
-// =============================================
 
 // Сохранение корзины
 function saveCart() {
@@ -246,10 +233,6 @@ function updateCartCounter() {
 // Дебаунсированное обновление счетчика
 const updateCartCounterDebounced = debounce(updateCartCounter, 100);
 
-// =============================================
-// FAVORITES MANAGEMENT - Управление избранным
-// =============================================
-
 // Загрузка избранного
 function loadFavorites() {
   if (favoritesCache) return favoritesCache;
@@ -328,9 +311,6 @@ function updateFavorites() {
   }
 }
 
-// =============================================
-// INITIALIZATION - Инициализация
-// =============================================
 document.addEventListener("DOMContentLoaded", function () {
   // Инициализация корзины
   updateCartCounter();
@@ -364,9 +344,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initializeLazyLoading();
 });
 
-// =============================================
-// EVENT HANDLERS - Обработчики событий
-// =============================================
 
 // Инициализация кнопок "В корзину"
 function initializeAddToCartButtons() {
@@ -537,10 +514,6 @@ function initializeSmoothScroll() {
   }
 }
 
-// =============================================
-// MODAL WINDOWS - Модальные окна
-// =============================================
-
 // Инициализация модальных окон
 function initializeModals() {
   // Events Modal
@@ -690,10 +663,6 @@ function getMenuItemsFromSection(sectionId) {
   return section ? Array.from(section.querySelectorAll(".menu-item")) : [];
 }
 
-// =============================================
-// CART DISPLAY - Отображение корзины
-// =============================================
-
 // Переключение на страницу корзины
 function toggleCart() {
   window.location.href = "pannier.html";
@@ -747,9 +716,6 @@ function updateCartDisplay() {
   }
 }
 
-// =============================================
-// FAVORITES DISPLAY - Отображение избранного
-// =============================================
 function updateFavoritesDisplay() {
   const favoritesContent = document.getElementById("favorites-content");
   if (!favoritesContent) return;
@@ -789,9 +755,6 @@ function updateFavoritesDisplay() {
   }
 }
 
-// =============================================
-// TAB SWITCHING - Переключение вкладок
-// =============================================
 function switchTab(tabName) {
   const tabs = document.querySelectorAll(".tab");
   const cartContent = document.getElementById("cart-content");
@@ -835,9 +798,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateFavoritesDisplay();
 });
 
-// =============================================
-// COOKIE CONSENT BANNER - Баннер согласия на куки
-// =============================================
 function initializeCookieBanner() {
   const cookieBanner = document.getElementById("cookie-banner");
   const acceptBtn = document.getElementById("accept-cookies");
@@ -871,9 +831,6 @@ function initializeCookieBanner() {
   });
 }
 
-// =============================================
-// LAZY LOADING - Ленивая загрузка
-// =============================================
 function initializeLazyLoading() {
   if ("IntersectionObserver" in window) {
     const lazyImages = document.querySelectorAll("img[data-src]");
@@ -905,9 +862,6 @@ function initializeLazyLoading() {
   }
 }
 
-// =============================================
-// ERROR HANDLING - Обработка ошибок
-// =============================================
 
 // Глобальный обработчик ошибок JavaScript
 window.addEventListener("error", function (e) {
@@ -937,9 +891,6 @@ window.addEventListener("unhandledrejection", function (e) {
   showNotification("Произошла ошибка при выполнении операции", "error");
 });
 
-// =============================================
-// DYNAMIC CSS - Динамическое добавление CSS
-// =============================================
 (function addDynamicCSS() {
   const style = document.createElement("style");
   style.textContent = `
@@ -1085,10 +1036,6 @@ window.addEventListener("unhandledrejection", function (e) {
   document.head.appendChild(style);
 })();
 
-// =============================================
-// EXPORT FUNCTIONS FOR GLOBAL USE
-// Экспорт функций для глобального использования
-// =============================================
 window.CastelloPanAfrica = {
   addToCart,
   removeFromCart,
