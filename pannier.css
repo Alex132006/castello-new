@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #d59631;
+    background-color: rgb(113, 57, 0);
     color: #ffffff;
     line-height: 1.6;
 }
@@ -173,13 +173,14 @@ av {
 .cart-item-name {
     font-size: 10px;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 5px;
 }
 
+/* ici je cache la somme en double */
 .cart-item-price {
-    color: #000000;
-    font-size: 1rem;
+    color: #99999984;
+    font-size: 1px;
 }
 
 .cart-item-controls {
@@ -288,7 +289,7 @@ av {
 
 .cart-total h3 {
     font-size: 1.3rem;
-    color: #000000;
+    color: #ece9e9;
 }
 
 .checkout-btn {
