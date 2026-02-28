@@ -2753,35 +2753,14 @@
         </div>
     </section>
 
-
-
-    <!-- les images de la gallerie -->
     <section id="gallery">
-        <!-- <h3 class="category-title">Галерея</h3> -->
         <div class="gallery">
-            <div class="gallery-item">
-                <img src="photo_2_2025-10-27_19-02-54.jpg" alt="Интерьер ресторана">
-            </div>
-            <div class="gallery-item">
-                <img src="photo_3_2025-10-27_19-02-54.jpg" alt="Блюдо от шеф-повара">
-            </div>
-            <div class="gallery-item">
-                <img src="photo_8_2025-10-27_19-02-54.jpg" alt="Готовка на кухне">
-            </div>
-            <div class="gallery-item">
-                <img src="photo_7_2025-10-27_19-02-54.jpg" alt="Десерты">
-            </div>
-            <div class="gallery-item">
-                <img src="photo_5_2025-10-27_19-02-54.jpg" alt="Итальянская пицца">
-            </div>
-            <!-- <div class="gallery-item">
-                <img src="photo_1_2025-10-27_19-02-54.jpg" alt="Кофе и выпечка">
-            </div> -->
+    
+            <iframe class="carte" src="https://yandex.ru/maps/213/moscow/?ll=37.506924%2C55.652317&mode=poi&poi%5Bpoint%5D=37.506781%2C55.652558&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D236911083875&z=17.83"
+                width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    
         </div>
-    </section>
-    <!-- fin de la gallerie -->
-
-
+    </section> 
 
     <!-- Footer Section -->
     <footer>
@@ -2791,10 +2770,10 @@
                     <h1 class="police">Контакты</h1>
                     <ul id="apropos">
                         <li class="police">
-                            <a
+                            <!-- <a
                                 href="https://yandex.ru/maps/213/moscow/?ll=37.506924%2C55.652317&mode=poi&poi%5Bpoint%5D=37.506781%2C55.652558&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D236911083875&z=17.83">
-                                Ул. Миклухо-Маклая, 17к1, Москва, Россия<br>Москва, Россия
-                            </a>
+                                Ул. Миклухо-Маклая, 17к1, Москва, Россия
+                            </a> -->
                         </li>
                         <li class="police"><a href="tel:+79773586398">+7 (977) 358-63-98</a></li>
                         <li class="police"><a href="mailto:pan-afrika@mail.ru">pan-afrika@mail.ru</a></li>
@@ -2837,7 +2816,7 @@
             <span class="close-btn">&times;</span>
 
             <div class="event-container">
-                <h2 class="section-title" style="color: rgb(255, 255, 255); font-size: 30px; text-align: center;">Castello</h2>
+                <h2 class="section-title" style="color: rgb(255, 255, 255); font-size: 30px; text-align: center;">Castelo</h2>
         <p style="color: rgb(234, 153, 11); font-weight: bolder; font-size: 15px; position: relative; top: -10px;  text-align: center;"> Pan Africa</p>
             
                 <div class="events-modal">
@@ -2845,6 +2824,7 @@
                     <button class="events-menu" data-target="photo">Выгодно</button>
                     <button class="events-menu" data-target="recipe">Повар</button>
                     <button class="events-menu" data-target="video">Видео</button>
+                    <button class="events-menu" data-target="restaurant">Ресторан</button>
                 </div>
             </div>
 
@@ -3007,6 +2987,24 @@
                 </div>
             </div>
 
+            <div id="restaurant" class="event-section">
+                <div class="gallery-item">
+                    <img src="photo_2_2025-10-27_19-02-54.jpg" alt="Интерьер ресторана">
+                </div>
+                <div class="gallery-item">
+                    <img src="photo_3_2025-10-27_19-02-54.jpg" alt="Блюдо от шеф-повара">
+                </div>
+                <div class="gallery-item">
+                    <img src="photo_8_2025-10-27_19-02-54.jpg" alt="Готовка на кухне">
+                </div>
+                <div class="gallery-item">
+                    <img src="photo_7_2025-10-27_19-02-54.jpg" alt="Десерты">
+                </div>
+                <div class="gallery-item">
+                    <img src="photo_5_2025-10-27_19-02-54.jpg" alt="Итальянская пицца">
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -3063,8 +3061,8 @@
             <span>Меню</span>
         </a>
         <a href="#gallery" class="nav-item" data-section="gallery">
-            <i class="fas fa-images"></i>
-            <span>Галерея</span>
+            <i class="fa-solid fa-map"></i>
+            <span>Карта</span>
         </a>
         <a href="pannier.html" class="nav-item cart-nav-item" data-section="cart">
             <div class="cart-icon-wrapper">
