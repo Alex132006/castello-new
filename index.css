@@ -32,6 +32,15 @@ heaer {
     height: 500px;
 }
 
+.carte {
+    border: 1px solid black;
+    width: 100%;
+    height: 300px;
+    border-radius: 30px;
+    /* prévaut sur la largeur définie par l'attribut HTML width */
+    z-index: 1000;
+} 
+
 header::before {
     content: '';
     position: absolute;
